@@ -1,0 +1,66 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e8]:
+        - link "Évangéliste Ahonga Komlavi" [ref=f1e9] [cursor=pointer]:
+          - /url: http://ahonga-komlavi.local/
+        - generic [ref=f1e10]: Site de l'évangéliste Ahonga Komlavi
+      - navigation [ref=f1e13]:
+        - link "Skip to content" [ref=f1e14] [cursor=pointer]:
+          - /url: "#main"
+        - list [ref=f1e16]:
+          - listitem [ref=f1e17]:
+            - link "Accueil" [ref=f1e18] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/
+          - listitem [ref=f1e19]:
+            - link "À propos" [ref=f1e20] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/about-us
+          - listitem [ref=f1e21]:
+            - link "Vision" [ref=f1e22] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#vision
+          - listitem [ref=f1e23]:
+            - link "Programme" [ref=f1e24] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#programme
+          - listitem [ref=f1e25]:
+            - link "Dons" [ref=f1e26] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#donner
+          - listitem [ref=f1e27]:
+            - link "Contact" [ref=f1e28] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/about-us#contact
+  - generic [ref=f1e30]:
+    - banner [ref=f1e35]:
+      - heading "About Us" [level=1] [ref=f1e36]
+    - main [ref=f1e37]:
+      - article [ref=f1e39]:
+        - generic [ref=f1e42]:
+          - generic [ref=f1e44]:
+            - generic [ref=f1e45]:
+              - generic [ref=f1e46]: Qui sommes-nous
+              - heading "À propos" [level=2] [ref=f1e47]
+            - paragraph [ref=f1e48]: Découvrez l’histoire et la mission de l’Évangéliste Ahonga Komlavi, un serviteur appelé à conduire les âmes dans la présence de Dieu.
+            - paragraph [ref=f1e49]: L’Évangéliste Ahonga Komlavi est un ministre de l’Évangile passionné par la transformation des vies et l’impact des communautés. Son ministère est marqué par une profonde vie de prière, un enseignement biblique solide et un appel à la sainteté. À travers le Centre de prière ESPRIT ET VIE, il accompagne des personnes de tous horizons vers une relation authentique avec Jésus-Christ.
+            - paragraph [ref=f1e50]: "Sa mission : proclamer l’Évangile, former les disciples et impacter les communautés à travers la puissance du Saint-Esprit. Chaque rassemblement est une occasion de voir Dieu toucher les cœurs, restaurer les familles et libérer les captifs."
+            - paragraph [ref=f1e51]: Nous croyons que la foi n’est pas seulement un mot, mais une puissance qui transforme les situations, guérit les blessures et redonne l’espoir. Rejoignez-nous pour vivre cette expérience.
+          - generic [ref=f1e53]:
+            - generic [ref=f1e54]:
+              - generic [ref=f1e55]: Contact
+              - heading "Contactez-nous" [level=2] [ref=f1e56]
+            - generic [ref=f1e57]:
+              - generic [ref=f1e58]:
+                - paragraph [ref=f1e59]:
+                  - strong [ref=f1e60]: "Téléphone :"
+                  - text: +228 90 87 78 55
+                - paragraph [ref=f1e61]:
+                  - strong [ref=f1e62]: "Mobile :"
+                  - text: +228 99 69 78 48
+                - paragraph [ref=f1e63]:
+                  - strong [ref=f1e64]: "Email :"
+                  - text: priere@evangelisteahongakomlavi.com
+                - paragraph [ref=f1e65]:
+                  - strong [ref=f1e66]: "Adresse :"
+                  - text: Centre de prière ESPRIT ET VIE, Djagblé-Abolavé – Quartier des Vainqueurs
+              - generic [ref=f1e67]:
+                - textbox [ref=f1e68]
+                - button "Envoyer le message" [ref=f1e69] [cursor=pointer]
+  - generic [ref=f1e70] [cursor=pointer]
+  - status [ref=f1e73]

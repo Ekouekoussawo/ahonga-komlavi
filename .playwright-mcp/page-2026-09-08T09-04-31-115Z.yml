@@ -1,0 +1,48 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e8]:
+        - link "Évangéliste Ahonga Komlavi" [ref=f1e9] [cursor=pointer]:
+          - /url: http://ahonga-komlavi.local/
+        - generic [ref=f1e10]: Site de l'évangéliste Ahonga Komlavi
+      - generic [ref=f1e12]:
+        - navigation:
+          - link "Skip to content" [ref=f1e13] [cursor=pointer]:
+            - /url: "#main"
+  - generic [ref=f1e15]:
+    - banner [ref=f1e20]:
+      - heading "About Us" [level=1] [ref=f1e21]
+    - main [ref=f1e22]:
+      - article [ref=f1e24]:
+        - generic [ref=f1e27]:
+          - generic [ref=f1e29]:
+            - generic [ref=f1e30]:
+              - generic [ref=f1e31]: Qui sommes-nous
+              - heading "À propos" [level=2] [ref=f1e32]
+            - paragraph [ref=f1e33]: Découvrez l’histoire et la mission de l’Évangéliste Ahonga Komlavi, un serviteur appelé à conduire les âmes dans la présence de Dieu.
+            - paragraph [ref=f1e34]: L’Évangéliste Ahonga Komlavi est un ministre de l’Évangile passionné par la transformation des vies et l’impact des communautés. Son ministère est marqué par une profonde vie de prière, un enseignement biblique solide et un appel à la sainteté. À travers le Centre de prière ESPRIT ET VIE, il accompagne des personnes de tous horizons vers une relation authentique avec Jésus-Christ.
+            - paragraph [ref=f1e35]: "Sa mission : proclamer l’Évangile, former les disciples et impacter les communautés à travers la puissance du Saint-Esprit. Chaque rassemblement est une occasion de voir Dieu toucher les cœurs, restaurer les familles et libérer les captifs."
+            - paragraph [ref=f1e36]: Nous croyons que la foi n’est pas seulement un mot, mais une puissance qui transforme les situations, guérit les blessures et redonne l’espoir. Rejoignez-nous pour vivre cette expérience.
+          - generic [ref=f1e38]:
+            - generic [ref=f1e39]:
+              - generic [ref=f1e40]: Contact
+              - heading "Contactez-nous" [level=2] [ref=f1e41]
+            - generic [ref=f1e42]:
+              - generic [ref=f1e43]:
+                - paragraph [ref=f1e44]:
+                  - strong [ref=f1e45]: "Téléphone :"
+                  - text: +228 90 87 78 55
+                - paragraph [ref=f1e46]:
+                  - strong [ref=f1e47]: "Mobile :"
+                  - text: +228 99 69 78 48
+                - paragraph [ref=f1e48]:
+                  - strong [ref=f1e49]: "Email :"
+                  - text: priere@evangelisteahongakomlavi.com
+                - paragraph [ref=f1e50]:
+                  - strong [ref=f1e51]: "Adresse :"
+                  - text: Centre de prière ESPRIT ET VIE, Djagblé-Abolavé – Quartier des Vainqueurs
+              - generic [ref=f1e52]:
+                - textbox [ref=f1e53]
+                - button "Envoyer le message" [ref=f1e54] [cursor=pointer]
+  - generic [ref=f1e55] [cursor=pointer]
+  - status [ref=f1e58]

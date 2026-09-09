@@ -1,0 +1,50 @@
+- generic [ref=e2]:
+  - heading "Choix des polices - Évangéliste Ahonga Komlavi" [level=1] [ref=e3]
+  - generic [ref=e4]:
+    - generic [ref=e5]: Option A - Élégant & Moderne (Recommandé)
+    - generic [ref=e6]:
+      - generic [ref=e7]: Headings
+      - generic [ref=e8]: Playfair Display
+    - generic [ref=e9]:
+      - generic [ref=e10]: Body Text
+      - generic [ref=e11]: Inter - Un serviteur appelé à conduire les âmes dans la présence de Dieu. Ce texte montre la lisibilité et la modernité de cette police pour le corps du texte.
+    - generic [ref=e12]:
+      - generic [ref=e13]: CTA / Accents
+      - link "Soutenir" [ref=e14] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e15]:
+    - generic [ref=e16]: Option B - Propre & Professionnel
+    - generic [ref=e17]:
+      - generic [ref=e18]: Headings
+      - generic [ref=e19]: Poppins
+    - generic [ref=e20]:
+      - generic [ref=e21]: Body Text
+      - generic [ref=e22]: Open Sans - Un serviteur appelé à conduire les âmes dans la présence de Dieu. Ce texte montre la lisibilité et la modernité de cette police pour le corps du texte.
+    - generic [ref=e23]:
+      - generic [ref=e24]: CTA / Accents
+      - link "Soutenir" [ref=e25] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e26]:
+    - generic [ref=e27]: Option C - Joyeux & Vibrant
+    - generic [ref=e28]:
+      - generic [ref=e29]: Headings
+      - generic [ref=e30]: Nunito
+    - generic [ref=e31]:
+      - generic [ref=e32]: Body Text
+      - generic [ref=e33]: Lato - Un serviteur appelé à conduire les âmes dans la présence de Dieu. Ce texte montre la lisibilité et la modernité de cette police pour le corps du texte.
+    - generic [ref=e34]:
+      - generic [ref=e35]: CTA / Accents
+      - link "Soutenir" [ref=e36] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e37]:
+    - generic [ref=e38]: Option D - Classique & Traditionnel
+    - generic [ref=e39]:
+      - generic [ref=e40]: Headings
+      - generic [ref=e41]: Merriweather
+    - generic [ref=e42]:
+      - generic [ref=e43]: Body Text
+      - generic [ref=e44]: Source Sans Pro - Un serviteur appelé à conduire les âmes dans la présence de Dieu. Ce texte montre la lisibilité et la modernité de cette police pour le corps du texte.
+    - generic [ref=e45]:
+      - generic [ref=e46]: CTA / Accents
+      - link "Soutenir" [ref=e47] [cursor=pointer]:
+        - /url: "#"

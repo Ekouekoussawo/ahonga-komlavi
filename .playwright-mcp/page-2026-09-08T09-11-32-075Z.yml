@@ -1,0 +1,69 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e3]:
+    - generic [ref=f2e5]:
+      - generic [ref=f2e8]:
+        - link "Évangéliste Ahonga Komlavi" [ref=f2e9] [cursor=pointer]:
+          - /url: http://ahonga-komlavi.local/
+        - generic [ref=f2e10]: Site de l'évangéliste Ahonga Komlavi
+      - navigation [ref=f2e13]:
+        - link "Skip to content" [ref=f2e14] [cursor=pointer]:
+          - /url: "#main"
+        - list [ref=f2e16]:
+          - listitem [ref=f2e17]:
+            - link "Accueil" [ref=f2e18] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/
+          - listitem [ref=f2e19]:
+            - link "À propos" [ref=f2e20] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/about-us
+          - listitem [ref=f2e21]:
+            - link "Vision" [ref=f2e22] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#vision
+          - listitem [ref=f2e23]:
+            - link "Programme" [ref=f2e24] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#programme
+          - listitem [ref=f2e25]:
+            - link "Dons" [ref=f2e26] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#donner
+          - listitem [ref=f2e27]:
+            - link "Contact" [ref=f2e28] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/about-us#contact
+  - generic [ref=f2e30]:
+    - banner [ref=f2e35]:
+      - heading "About Us" [level=1] [ref=f2e36]
+    - main [ref=f2e37]:
+      - article [ref=f2e39]:
+        - generic [ref=f2e42]:
+          - generic [ref=f2e44]:
+            - generic [ref=f2e45]:
+              - generic [ref=f2e46]: Qui sommes-nous
+              - heading "À propos" [level=2] [ref=f2e47]
+            - paragraph [ref=f2e48]: Découvrez l’histoire et la mission de l’Évangéliste Ahonga Komlavi, un serviteur appelé à conduire les âmes dans la présence de Dieu.
+            - paragraph [ref=f2e49]: L’Évangéliste Ahonga Komlavi est un ministre de l’Évangile passionné par la transformation des vies et l’impact des communautés. Son ministère est marqué par une profonde vie de prière, un enseignement biblique solide et un appel à la sainteté. À travers le Centre de prière ESPRIT ET VIE, il accompagne des personnes de tous horizons vers une relation authentique avec Jésus-Christ.
+            - paragraph [ref=f2e50]: "Sa mission : proclamer l’Évangile, former les disciples et impacter les communautés à travers la puissance du Saint-Esprit. Chaque rassemblement est une occasion de voir Dieu toucher les cœurs, restaurer les familles et libérer les captifs."
+            - paragraph [ref=f2e51]: Nous croyons que la foi n’est pas seulement un mot, mais une puissance qui transforme les situations, guérit les blessures et redonne l’espoir. Rejoignez-nous pour vivre cette expérience.
+          - generic [ref=f2e53]:
+            - generic [ref=f2e54]:
+              - generic [ref=f2e55]: Contact
+              - heading "Contactez-nous" [level=2] [ref=f2e56]
+            - generic [ref=f2e57]:
+              - generic [ref=f2e58]:
+                - paragraph [ref=f2e59]:
+                  - strong [ref=f2e60]: "Téléphone :"
+                  - text: +228 90 87 78 55
+                - paragraph [ref=f2e61]:
+                  - strong [ref=f2e62]: "Mobile :"
+                  - text: +228 99 69 78 48
+                - paragraph [ref=f2e63]:
+                  - strong [ref=f2e64]: "Email :"
+                  - text: priere@evangelisteahongakomlavi.com
+                - paragraph [ref=f2e65]:
+                  - strong [ref=f2e66]: "Adresse :"
+                  - text: Centre de prière ESPRIT ET VIE, Djagblé-Abolavé – Quartier des Vainqueurs
+              - generic [ref=f2e68]:
+                - textbox "Votre nom complet" [ref=f2e69]
+                - textbox "Votre adresse email" [ref=f2e70]
+                - textbox "Téléphone" [ref=f2e71]
+                - textbox "Votre message ou demande de prière" [ref=f2e72]
+                - button "Envoyer le message" [ref=f2e73] [cursor=pointer]
+  - generic [ref=f2e74] [cursor=pointer]
+  - status [ref=f2e77]

@@ -1,0 +1,616 @@
+/* Joyful Design System - Ported from kemitafricatours */
+/* Original: https://github.com/your-repo/kemitafricatours */
+
+:root {
+  /* Joyful palette adapted from kemitafricatours */
+  --color-primary-400: #F5A623;
+  --color-primary-500: #E09510;
+  --color-primary-600: #C7840D;
+  --color-primary-700: #A86A0A;
+  
+  /* Accent colors */
+  --color-coral-400: #FF6B6B;
+  --color-coral-500: #FF5252;
+  --color-teal-400: #26C6DA;
+  --color-teal-500: #00BCD4;
+  --color-green-400: #66BB6A;
+  
+  /* Neutrals */
+  --color-slate-50: #FFFDF9;
+  --color-slate-100: #F8F9FA;
+  --color-slate-200: #E8E8E8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1A1A1A;
+  --color-slate-900: #0F172A;
+  
+  /* Typography - EXACT from kemitafricatours */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-accent: 'Montserrat', system-ui, sans-serif;
+  
+  /* Spacing - EXACT from kemitafricatours */
+  --section-padding: 5rem;
+  --container-max: 1280px;
+}
+
+/* Base - EXACT from kemitafricatours */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-slate-800);
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography utilities - EXACT from kemitafricatours */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* Section spacing - EXACT from kemitafricatours */
+.section-padding {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* Container - EXACT from kemitafricatours */
+.container-custom {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Image hover zoom - EXACT from kemitafricatours */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay gradient for hero/cards - EXACT from kemitafricatours */
+.overlay-gradient {
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.3) 50%, transparent 100%);
+}
+
+/* Section title underline - EXACT from kemitafricatours */
+.section-title-line {
+  position: relative;
+  display: inline-block;
+}
+.section-title-line::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary-500);
+}
+
+/* Button styles - EXACT from kemitafricatours */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--color-primary-600);
+  color: #fff;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--color-primary-700);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(245, 166, 35, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--color-slate-700);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--color-slate-300);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  border-color: var(--color-primary-600);
+  color: var(--color-primary-600);
+}
+
+/* Card hover - EXACT from kemitafricatours */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus visible - EXACT from kemitafricatours */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Skip to content - EXACT from kemitafricatours */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary-700);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Hero section - Ported from kemitafricatours HeroSlider */
+.vj-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('../images/hero-bg.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+
+.vj-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.vj-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  color: #fff;
+}
+
+.vj-hero-content h1 {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  margin-bottom: 1rem;
+}
+
+.vj-hero-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+}
+
+.vj-hero-content .btn-primary {
+  background: var(--color-primary-600);
+  color: #fff;
+}
+
+.vj-hero-content .btn-primary:hover {
+  background: var(--color-primary-700);
+  box-shadow: 0 10px 25px rgba(245, 166, 35, 0.3);
+}
+
+.vj-hero-content .btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.8);
+}
+
+.vj-hero-content .btn-outline:hover {
+  border-color: var(--color-primary-400);
+  color: var(--color-primary-400);
+}
+
+/* Stats bar */
+.vj-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0;
+  background: #fff;
+  border-bottom: 1px solid var(--color-slate-200);
+}
+
+.vj-stat-item {
+  text-align: center;
+}
+
+.vj-stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary-600);
+  display: block;
+  line-height: 1;
+}
+
+.vj-stat-label {
+  font-size: 0.875rem;
+  color: var(--color-slate-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  font-family: var(--font-accent);
+}
+
+/* Quick access cards */
+.vj-quick-access {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vj-quick-card {
+  background: #fff;
+  border: 1px solid var(--color-slate-200);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.vj-quick-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-500);
+}
+
+.vj-quick-card .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.vj-quick-card h3 {
+  color: var(--color-slate-800);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+}
+
+.vj-quick-card p {
+  color: var(--color-slate-500);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Evangelist section */
+.vj-evangelist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.vj-evangelist-image {
+  position: relative;
+}
+
+.vj-evangelist-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.vj-evangelist-content h2 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--color-slate-800);
+  margin-bottom: 1.5rem;
+}
+
+.vj-evangelist-content p {
+  color: var(--color-slate-600);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+/* Programme cards */
+.vj-programme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vj-programme-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-slate-200);
+}
+
+.vj-programme-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border-color: var(--color-primary-500);
+}
+
+.vj-programme-item .programme-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.vj-programme-item h3 {
+  color: var(--color-slate-800);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.vj-programme-item .programme-time {
+  display: block;
+  color: var(--color-coral-500);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-accent);
+}
+
+.vj-programme-item p {
+  color: var(--color-slate-500);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Donation cards */
+.vj-dons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vj-don-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  text-align: center;
+  border: 1px solid var(--color-slate-200);
+  transition: all 0.3s ease;
+}
+
+.vj-don-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  border-color: var(--color-primary-500);
+}
+
+.vj-don-card h3 {
+  color: var(--color-primary-600);
+  margin-bottom: 1rem;
+  font-family: var(--font-display);
+}
+
+.vj-don-card .btn-primary {
+  margin-top: 1rem;
+}
+
+/* Contact form */
+.vj-contact-form input,
+.vj-contact-form textarea,
+.vj-contact-form select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-slate-200);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.vj-contact-form input:focus,
+.vj-contact-form textarea:focus,
+.vj-contact-form select:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+}
+
+.vj-contact-form button {
+  background: var(--color-primary-600);
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 2rem auto 0;
+}
+
+.vj-contact-form button:hover {
+  background: var(--color-primary-700);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(245, 166, 35, 0.3);
+}
+
+/* Post cards */
+.vj-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.vj-post-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-slate-200);
+  transition: all 0.3s ease;
+}
+
+.vj-post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.vj-post-image {
+  overflow: hidden;
+}
+
+.vj-post-image img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.vj-post-card:hover .vj-post-image img {
+  transform: scale(1.05);
+}
+
+.vj-post-card h3 {
+  color: var(--color-slate-800);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+}
+
+.vj-post-card p {
+  color: var(--color-slate-500);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.vj-post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--color-slate-400);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-slate-200);
+}
+
+.vj-post-category {
+  display: inline-block;
+  background: var(--color-primary-500);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.vj-read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-primary-600);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.vj-read-more:hover {
+  color: var(--color-primary-700);
+}
+
+/* Quote block */
+.vj-quote {
+  margin: 2.5rem auto 0;
+  max-width: 800px;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--color-primary-500);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  font-style: italic;
+  color: var(--color-slate-700);
+}
+
+.vj-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-primary-600);
+  font-family: var(--font-accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vj-hero {
+    min-height: 70vh;
+  }
+  
+  .vj-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .vj-evangelist {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .vj-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .vj-quick-access {
+    grid-template-columns: 1fr;
+  }
+  
+  .vj-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}

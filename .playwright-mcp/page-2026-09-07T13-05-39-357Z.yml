@@ -1,0 +1,37 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "preview.themeforest.net" [level=1] [ref=e5]
+      - heading "Vérification de sécurité en cours" [level=2] [ref=e6]
+      - paragraph [ref=e7]: Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.
+      - alert [ref=e8]:
+        - generic [ref=e9]:
+          - heading "Pourquoi cette vérification prend-elle plus de temps ?" [level=2] [ref=e10]
+          - paragraph [ref=e11]: Cette vérification peut prendre plus de temps si l’ordinateur est ancien ou si la connexion Internet est lente.
+          - paragraph [ref=e12]: "Que faire ensuite :"
+          - list [ref=e13]:
+            - listitem [ref=e14]: Attendez quelques instants. L'actualisation de la page relance la vérification de sécurité et peut prendre plus de temps.
+            - listitem [ref=e15]:
+              - text: Si la vérification ne se termine toujours pas,
+              - link "actualisez cette page" [ref=e16] [cursor=pointer]:
+                - /url: "#"
+              - text: .
+            - listitem [ref=e17]:
+              - text: Si vous êtes toujours bloqué sur cette page après l’avoir actualisée, reportez-vous à la
+              - link "documentation de dépannage" [ref=e18] [cursor=pointer]:
+                - /url: /cdn-cgi/challenge-platform/help
+              - text: de Cloudflare pour obtenir plus d’aide.
+  - contentinfo [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e23]:
+        - text: "Ray ID:"
+        - code [ref=e24]: a375ecfffff5b287
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - text: Performances et sécurité par
+          - link "Cloudflare, nouvel onglet" [ref=e27] [cursor=pointer]:
+            - /url: https://www.cloudflare.com?utm_source=challenge&utm_campaign=m
+            - text: Cloudflare
+        - link "Confidentialité, nouvel onglet" [ref=e29] [cursor=pointer]:
+          - /url: https://www.cloudflare.com/fr-fr/privacypolicy/
+          - text: Confidentialité

@@ -1,0 +1,218 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Évangéliste Ahonga Komlavi" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e6]:
+        - link "Accueil" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "À propos" [ref=e8] [cursor=pointer]:
+          - /url: /about-us
+        - link "Prêches" [ref=e9] [cursor=pointer]:
+          - /url: /sermons
+        - link "Programme" [ref=e10] [cursor=pointer]:
+          - /url: /#programme
+        - link "Dons" [ref=e11] [cursor=pointer]:
+          - /url: /#donner
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: /about-us#contact
+      - link "Soutenir" [ref=e13] [cursor=pointer]:
+        - /url: /#donner
+      - button "☰" [ref=e14]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e20]:
+          - heading "Bienvenue" [level=1] [ref=e21]
+          - paragraph [ref=e22]: Un serviteur appelé à conduire les âmes dans la présence de Dieu
+          - link "En savoir plus" [ref=e23] [cursor=pointer]:
+            - /url: /about-us
+        - generic [ref=e26]:
+          - heading "Notre Vision" [level=1] [ref=e27]
+          - paragraph [ref=e28]: Apporter l’espérance, la foi et la transformation par l’Évangile
+          - link "En savoir plus" [ref=e29] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e32]:
+          - heading "Rejoignez-nous" [level=1] [ref=e33]
+          - paragraph [ref=e34]: Participez à nos programmes et vivez une expérience de foi authentique
+          - link "En savoir plus" [ref=e35] [cursor=pointer]:
+            - /url: "#"
+        - button "❮" [ref=e36]
+        - button "❯" [ref=e37]
+      - generic [ref=e40]:
+        - link "📖 Enseignement Prêches et études bibliques pour grandir dans la foi En savoir plus →" [ref=e41] [cursor=pointer]:
+          - /url: /blog
+          - generic [ref=e42]: 📖
+          - heading "Enseignement" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Prêches et études bibliques pour grandir dans la foi
+          - text: En savoir plus →
+        - link "🙏 Prière Programmes de prière et d’intercession En savoir plus →" [ref=e45] [cursor=pointer]:
+          - /url: /#programme
+          - generic [ref=e46]: 🙏
+          - heading "Prière" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Programmes de prière et d’intercession
+          - text: En savoir plus →
+        - link "👥 Communauté Rejoindre une famille de foi active En savoir plus →" [ref=e49] [cursor=pointer]:
+          - /url: /about-us
+          - generic [ref=e50]: 👥
+          - heading "Communauté" [level=3] [ref=e51]
+          - paragraph [ref=e52]: Rejoindre une famille de foi active
+          - text: En savoir plus →
+        - link "💙 Soutenir Contribuer à l’œuvre de Dieu En savoir plus →" [ref=e53] [cursor=pointer]:
+          - /url: /#donner
+          - generic [ref=e54]: 💙
+          - heading "Soutenir" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Contribuer à l’œuvre de Dieu
+          - text: En savoir plus →
+      - generic [ref=e58]:
+        - heading "Prochains événements" [level=2] [ref=e59]
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: 08SEPT.
+            - generic [ref=e63]:
+              - heading "Jeûne et prière communautaire" [level=3] [ref=e64]
+              - paragraph [ref=e65]: <p>Un temps de consécration et de jeûne pour la famille, l&rsquo;Église et la nation.</p>
+          - generic [ref=e66]:
+            - generic [ref=e67]: 08SEPT.
+            - generic [ref=e68]:
+              - heading "Grande séance de prière" [level=3] [ref=e69]
+              - paragraph [ref=e70]: "<p>Programme spécial : enseignement, intercession et recherche de la présence de Dieu.</p>"
+          - generic [ref=e71]:
+            - generic [ref=e72]: 08SEPT.
+            - generic [ref=e73]:
+              - heading "Armée de Midi" [level=3] [ref=e74]
+              - paragraph [ref=e75]: <p>Rassemblement de midi pour intercéder et combattre dans la prière.</p>
+          - generic [ref=e76]:
+            - generic [ref=e77]: 08SEPT.
+            - generic [ref=e78]:
+              - heading "Veillée de prière spéciale" [level=3] [ref=e79]
+              - paragraph [ref=e80]: <p>Une nuit consacrée à la prière, à l&rsquo;intercession et à la louange. Venez chercher la face de Dieu avec nous.</p>
+      - generic [ref=e82]:
+        - heading "Dernière vidéo" [level=2] [ref=e83]
+        - paragraph [ref=e84]: Ajoutez votre chaîne YouTube et clé API pour afficher la dernière vidéo ici.
+      - generic [ref=e86]:
+        - heading "Nous trouver" [level=2] [ref=e87]
+        - paragraph [ref=e88]: Centre de prière ESPRIT ET VIE — Djagblé-Abolavé, Quartier des Vainqueurs
+        - iframe [ref=e90]:
+          - link "Ouvrir dans Maps (s'ouvre dans un nouvel onglet)" [ref=f1e4] [cursor=pointer]:
+            - /url: undefined
+            - text: Ouvrir dans Maps
+      - generic [ref=e92]:
+        - heading "Galerie" [level=2] [ref=e93]
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - img "Prière" [ref=e96]
+            - generic [ref=e97]: Prière
+          - generic [ref=e98]:
+            - img "Communauté" [ref=e99]
+            - generic [ref=e100]: Communauté
+          - generic [ref=e101]:
+            - img "Louange" [ref=e102]
+            - generic [ref=e103]: Louange
+          - generic [ref=e104]:
+            - img "Enseignement" [ref=e105]
+            - generic [ref=e106]: Enseignement
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e110]: "15"
+          - generic [ref=e111]: Années de ministère
+        - generic [ref=e112]:
+          - generic [ref=e113]: 1 000
+          - generic [ref=e114]: Vies transformées
+        - generic [ref=e115]:
+          - generic [ref=e116]: "50"
+          - generic [ref=e117]: Programmes de prière
+        - generic [ref=e118]:
+          - generic [ref=e119]: "200"
+          - generic [ref=e120]: Communautés touchées
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - heading "Restez connecté" [level=3] [ref=e124]
+          - paragraph [ref=e125]: Recevez nos actualités, événements et inspirations par email.
+        - generic [ref=e126]:
+          - textbox "Votre email" [ref=e127]
+          - button "S’inscrire" [ref=e128]
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - heading "Contactez-nous" [level=2] [ref=e133]
+          - generic [ref=e134]:
+            - generic [ref=e135]: 📍
+            - generic [ref=e136]:
+              - heading "Adresse" [level=4] [ref=e137]
+              - paragraph [ref=e138]: Centre de prière ESPRIT ET VIE, Djagblé-Abolavé — Quartier des Vainqueurs
+          - generic [ref=e139]:
+            - generic [ref=e140]: 📞
+            - generic [ref=e141]:
+              - heading "Téléphone" [level=4] [ref=e142]
+              - paragraph [ref=e143]: +228 90 87 78 55<br />+228 99 69 78 48
+          - generic [ref=e144]:
+            - generic [ref=e145]: ✉️
+            - generic [ref=e146]:
+              - heading "Email" [level=4] [ref=e147]
+              - paragraph [ref=e148]: priere@evangelisteahongakomlavi.com
+        - generic [ref=e149]:
+          - heading "Envoyez un message" [level=2] [ref=e150]
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - text: Nom complet
+              - textbox "Nom complet" [ref=e153]
+            - generic [ref=e154]:
+              - text: Email
+              - textbox "Email" [ref=e155]
+          - generic [ref=e156]:
+            - text: Sujet de prière
+            - combobox "Sujet de prière" [ref=e157]:
+              - option "Sélectionnez un sujet" [selected]
+              - option "🩺 Guérison et santé"
+              - option "👨‍👩‍👧‍👦 Famille et mariage"
+              - option "💰 Finances et provision"
+          - generic [ref=e158]:
+            - text: Téléphone
+            - textbox "Téléphone" [ref=e159]
+          - generic [ref=e160]:
+            - text: Message
+            - textbox "Message" [ref=e161]
+          - button "Envoyer le message" [ref=e162]
+  - contentinfo [ref=e163]:
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - heading "Évangéliste Ahonga Komlavi" [level=4] [ref=e166]
+        - paragraph [ref=e167]: Un serviteur appelé à conduire les âmes dans la présence de Dieu. Ministère basé à Lomé, Togo.
+      - generic [ref=e168]:
+        - heading "Navigation" [level=4] [ref=e169]
+        - list [ref=e170]:
+          - listitem [ref=e171]:
+            - link "Accueil" [ref=e172] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e173]:
+            - link "À propos" [ref=e174] [cursor=pointer]:
+              - /url: /about-us
+          - listitem [ref=e175]:
+            - link "Programme" [ref=e176] [cursor=pointer]:
+              - /url: /#programme
+          - listitem [ref=e177]:
+            - link "Dons" [ref=e178] [cursor=pointer]:
+              - /url: /#donner
+      - generic [ref=e179]:
+        - heading "Contact" [level=4] [ref=e180]
+        - list [ref=e181]:
+          - listitem [ref=e182]: 📍 Djagblé-Abolavé, Quartier des Vainqueurs
+          - listitem [ref=e183]: 📞 +228 90 87 78 55
+          - listitem [ref=e184]: 📞 +228 99 69 78 48
+          - listitem [ref=e185]: ✉️ priere@evangelisteahongakomlavi.com
+      - generic [ref=e186]:
+        - heading "Suivez-nous" [level=4] [ref=e187]
+        - generic [ref=e188]: WhatsAppYouTubeTikTok
+    - generic [ref=e189]: © 2026 Évangéliste Ahonga Komlavi. Tous droits réservés.
+  - generic [ref=e194] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e195]
+    - generic [ref=e199]:
+      - button "Open issues overlay" [ref=e200]:
+        - generic [ref=e201]:
+          - generic [aria-hidden] [ref=e202]: "1"
+          - generic [ref=e203]: "2"
+        - generic [ref=e204]:
+          - text: Issue
+          - generic [aria-hidden] [ref=e205]: s
+      - button "Collapse issues badge" [ref=e206]
+  - alert [ref=e209]

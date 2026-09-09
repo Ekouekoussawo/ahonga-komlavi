@@ -1,0 +1,183 @@
+.page-wrapper {
+	> .left-only {
+		max-width: calc( 100% - var( --vamtam-left-sidebar-width, 30% ) );
+	}
+}
+
+header.main-header {
+	.header-contents,
+	.header-content-wrapper {
+		box-sizing: border-box;
+	}
+}
+
+#sub-header {
+	position: relative;
+}
+
+body.layout-full .alignwide {
+	max-width: 90% !important;
+}
+
+.loop-wrapper {
+	&.regular {
+		.home.blog.layout-full .page-content > &,
+		.archive.layout-full .page-content > &,
+		.search-results.layout-full .page-content > & {
+			:not(.vamtam-limited-layout)& {
+				max-width: 70%;
+			}
+		}
+	}
+}
+
+body.vamtam-limited-layout {
+	.vamtam-body-sidebar {
+		margin-top: var( --vamtam-sidebar-content-margin );
+	}
+}
+
+// Standard cart
+.woocommerce {
+	.woocommerce-ordering {
+		margin: 0 0 4vh;
+	}
+
+	.vamtam-cart-main {
+		background-color: transparent;
+
+		.product-thumbnail {
+			> a, > a > img {
+				display: block;
+			}
+		}
+
+		.woocommerce-cart-form__contents {
+			overflow-x: visible;
+		}
+
+		.cart_item {
+			grid-template-rows: auto;
+
+			&:not(:last-of-type) {
+				border-bottom: 1px solid var(--vamtam-accent-color-7);
+			}
+		}
+
+		.product-remove {
+			padding-top: .55em;
+		}
+
+		.product-price {
+			&:before {
+				display: none;
+			}
+			.quantity .vamtam-quantity {
+				select {
+					border: 1px solid var( --vamtam-default-line-color );
+				}
+			}
+		}
+	}
+}
+
+.vamtam-sticky-header {
+	z-index: 100;
+	transition: transform .2s ease !important;
+	will-change: transform;
+	left: 0;
+	right: 0;
+
+	&.vamtam-sticky-header--transparent-header {
+		transition: transform        .15s linear,
+					background-color .35s ease !important;
+		will-change: transform, background-color;
+	}
+
+	&[class*="vamtam-sticky-header--fixed"] {
+		position: fixed !important;
+	}
+
+	&.vamtam-sticky-header--fixed-shown {
+
+		&.vamtam-sticky-header--transparent-header {
+			background-color: var(--vamtam-sticky-header-bg-color) !important;
+		}
+
+		transform: translateY(0);
+	}
+
+	&.vamtam-sticky-header--fixed-hidden {
+		transform: translateY(-100%);
+	}
+}
+
+body.admin-bar.dialog-prevent-scroll {
+	max-height: calc( 100vh - 32px );
+}
+
+// ---------------- Custom Widget Styles -------------- //
+
+// Added here so when moved to individual widget styles there won't be any specificity alteration to be made.
+
+// Tabs widget desktop.
+.elementor-widget-tabs {
+	// Title numbering mask.
+	&.vamtam-has-numbering-bg {
+		.elementor-tabs .elementor-tab-mobile-title {
+			display: none;
+		}
+	}
+}
+
+// Menu cart.
+// WP Admin Bar - Menu Cart fix.
+body.admin-bar .elementor-widget-woocommerce-menu-cart {
+	.elementor-menu-cart__container {
+		height: calc(100vh - 32px);
+	}
+}
+
+// Caridad-only.
+body:not(.wp-admin):not(.elementor-editor-active) {
+	&.has-mouse-dot {
+		#mouseDot {
+			pointer-events: none;
+			position: fixed;
+			background-color: var(--vamtam-accent-color-1);
+			border-radius: 50%;
+			z-index: 10000;
+			width: 10px;
+			height: 10px;
+			top: -5px;
+			left: -5px;
+			transition: top .3s linear, left .3s linear, width .3s linear, height .3s linear, opacity .3s ease;
+			will-change: transform, width, height;
+			opacity: 1;
+
+			&.over-link {
+				width: 70px;
+				height: 70px;
+				top: -35px;
+				left: -35px;
+				opacity: .2;
+			}
+			&.over-iframe {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.meta-header-inside {
+	min-height: 20vh;
+}
+
+.page-header {
+	justify-content: center;
+
+	body.layout-full & {
+		text-align: center;
+		align-items: center;
+	}
+}

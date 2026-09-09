@@ -1,0 +1,2516 @@
+/*
+	Elementor-specific rules and overrides.
+*/
+@import '../mixins.less';
+
+.elementor-container {
+	form.elementor-form {
+		input[type], select {
+			margin-bottom: 0;
+		}
+
+		.elementor-field-group .elementor-field-label {
+			padding-left: 14px;
+			padding-right: 14px;
+		}
+
+		.elementor-field-textual {
+			&.elementor-size-xl {
+				padding: 6px 14px;
+			}
+
+			&.elementor-size-lg {
+				padding: 6px 14px;
+			}
+
+			&.elementor-size-md {
+				padding: 6px 14px;
+			}
+
+			&.elementor-size-sm {
+				padding: 5px 14px;
+			}
+
+			&.elementor-size-xs {
+				padding: 3px 14px;
+			}
+		}
+
+		textarea.elementor-field.elementor-field-textual {
+			padding-top: 13px;
+			padding-bottom: 13px;
+		}
+
+		.elementor-field-option {
+			input[type="radio"] {
+				vertical-align: middle;
+			}
+			label {
+				padding-left: 10px;
+			}
+		}
+	}
+}
+
+// WC products override.
+.cross-sells,
+.elementor-wc-products {
+	.products.vamtam-wc .product {
+		.woocommerce-product-details__short-description,
+		.woocommerce-loop-product__title {
+			margin: 0;
+		}
+	}
+
+	// Lagar-only.
+	&:not(.elementor-product-loop-item--align-left):not(.elementor-product-loop-item--align-right):not(.elementor-product-loop-item--align-center) .products .product {
+		text-align: center;
+		.star-rating {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	// Lagar-only.
+	ul.products.vamtam-wc li.product {
+		span.onsale,
+		&.product-category .vamtam-product-cat-info,
+		&.product-category .vamtam-product-cat-info > span {
+			margin: 0;
+			position: absolute;
+			top: 2.75em;
+			left: auto;
+			right: 0;
+			border-radius: var( --vamtam-border-radius-oval );
+			padding: 0.7em 3.5em;
+		}
+
+		.vamtam-product-cat-btn,
+		.add_to_cart_button,
+		.added_to_cart.wc-forward {
+			background-color: var(--vamtam-accent-color-2);
+			color: var(--vamtam-accent-color-8);
+
+			&:hover {
+				background-color: var(--vamtam-accent-color-1);
+			}
+		}
+
+		.vamtam-product-cats {
+			margin-bottom: .5em;
+			display: block;
+		}
+	}
+}
+
+.elementor-element.elementor-products-grid ul.products li.product {
+	width: auto !important;
+	margin: 0 !important;
+	float: none !important;
+}
+
+// Elementor post meta widget vertical alignment fix (inline).
+.elementor-inline-items.elementor-icon-list-items.elementor-post-info > li.elementor-inline-item {
+	align-items: center;
+}
+
+.elementor-pagination {
+	margin-top: 50px;
+	border-top: 3px solid var(--vamtam-accent-color-7);
+	padding-top: 30px;
+}
+
+.woocommerce div.product.elementor .elementor-product-booking form.cart:not(.grouped_form):not(.variations_form) {
+	flex-flow: column;
+}
+
+.elementor-price-list-price {
+	font-weight: 600;
+}
+
+.elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item {
+	padding-bottom: 10px;
+}
+
+.elementor-field-subgroup:not(.elementor-subgroup-inline) .elementor-field-option {
+	margin-bottom: 5px;
+}
+
+
+.elementor-select-wrapper {
+	&:before {
+		z-index: 1;
+		color: currentColor;
+	}
+
+	&.woocommerce-input-wrapper:before {
+		inset-inline-end: 30px;
+	}
+}
+
+body[class*="elementor-"] {
+	.select2.select2-container .select2-selection[role="combobox"] {
+		line-height: normal;
+		// Bijoux-only.
+		display: flex;
+		align-items: center;
+		padding: 14px 20px;
+
+		.select2-selection__arrow {
+			display: none;
+		}
+
+		.select2-selection__rendered {
+			line-height: inherit;
+			padding: 0px;
+		}
+	}
+
+	:not([class*="elementor-select-wrapper"]) > .select2.select2-container .select2-selection[role="combobox"] {
+		&:before {
+			content: "\e92a";
+			font-family: eicons;
+			font-size: 15px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 30px;
+			pointer-events: none;
+		}
+	}
+}
+
+// Theme Icons.
+[class^="vamtam-theme-"], [class*=" vamtam-theme-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "theme-icons" !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Elementor Lightbox.
+.dialog-lightbox-widget.dialog-type-buttons.elementor-lightbox {
+	// Fix for slideshow controls.
+	:is(.swiper-container, .swiper) * {
+		box-sizing: border-box;
+	}
+}
+
+#elementor-lightbox.dialog-type-lightbox {
+	z-index: 99999;
+}
+
+@keyframes vamtam-grow-left {
+    from { clip-path: inset(0 100% 0 0); }
+  	to { clip-path: inset(0); }
+}
+@keyframes vamtam-grow-right {
+    from { clip-path: inset(0 0 0 100%); }
+  	to { clip-path: inset(0); }
+}
+@keyframes vamtam-grow-top {
+    from { clip-path: inset(100% 0 0 0); }
+  	to { clip-path: inset(0); }
+}
+@keyframes vamtam-grow-bottom {
+    from { clip-path: inset(0 0 100% 0); }
+  	to { clip-path: inset(0); }
+}
+
+.growFromLeft {
+	&:not(.elementor-widget-image ) {
+		animation-name: vamtam-grow-left;
+		will-change: clip-path;
+	}
+}
+
+.growFromRight {
+	&:not(.elementor-widget-image ) {
+		animation-name: vamtam-grow-right;
+		will-change: clip-path;
+	}
+}
+
+.growFromLeftScroll {
+	@val: calc(100% - var(--vamtam-scroll-ratio));
+	&:not(.elementor-widget-image) {
+		clip-path:inset(0 @val 0 0);
+		transition: clip-path .1s linear;
+		will-change: clip-path;
+	}
+}
+.growFromRightScroll {
+	@val: calc(100% - var(--vamtam-scroll-ratio));
+	&:not(.elementor-widget-image) {
+		clip-path:inset(0 0 0 @val);
+		transition: clip-path .1s linear;
+		will-change: clip-path;
+	}
+}
+
+.growFromLeftScroll,
+.growFromRightScroll {
+	&.animated-fast {
+		transition-duration: .1s;
+	}
+	&.animated-slow {
+		transition-duration: .1s;
+	}
+}
+
+@keyframes vamtam-scale-out {
+    from { transform: scale(1.4); }
+  	to { transform: scale(1);}
+}
+
+// Bijoux-only.
+input[type="number"] {
+	appearance: textfield !important;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none !important;
+}
+
+.vamtam-count-wrap {
+	display: flex;
+	position: relative;
+	height: 100%;
+
+	span {
+		position: absolute;
+		content: '';
+		top: calc(50% - .5em);
+		z-index: 1;
+		width: 1em;
+		height: 1em;
+		font-size: 24px;
+		line-height: normal;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		user-select: none;
+
+		&.vamtam-increment {
+			right: 10px;
+		}
+		&.vamtam-decrement {
+			left: 10px;
+		}
+	}
+}
+
+.vamtam-popup-toggle {
+	&, &-clone {
+		i, svg {
+			transition: all .3s ease;
+		}
+	}
+	&-clone {
+		z-index: 99999;
+		position: fixed;
+		&, * {
+			background: transparent !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		a {
+			pointer-events: none !important;
+		}
+		&, li {
+			list-style: none;
+		}
+		opacity: 0;
+		pointer-events: none;
+		&.is-active {
+			opacity: 1;
+			&.is-clickable {
+				pointer-events: all;
+			}
+			i {
+				transition: all .3s ease !important;
+			}
+			&:hover i {
+				color: var(--vamtam-accent-color-1) !important;
+			}
+		}
+		// Use vamtam close Icon.
+		&.vamtam-popup-close-icon {
+			i {
+				&::before {
+					font-family: 'vamtam-theme' !important;
+					content: icon('vamtam-theme-close-sample') !important;
+				}
+			}
+		}
+		&.vamtam-popup-close-dark {
+			i, svg {
+				color: var(--vamtam-accent-color-6) !important;
+				fill: var(--vamtam-accent-color-6) !important;
+				stroke: var(--vamtam-accent-color-6) !important;
+			}
+			&.is-active {
+				&:hover {
+					i, svg {
+						color: var(--vamtam-accent-color-6) !important;
+						fill: var(--vamtam-accent-color-6) !important;
+						stroke: var(--vamtam-accent-color-6) !important;
+					}
+				}
+			}
+		}
+	}
+}
+// Bijoux-only.
+.vamtam-popup-toggle {
+	@keyframes vamtam-fade-out {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@keyframes vamtam-fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	// Clone
+	&.vamtam-popup-toggle-clone {
+		// Active state
+		&.is-active {
+			opacity: 1;
+			animation: vamtam-fade-in 1s forwards linear !important;
+		}
+		// Closed state
+		&:not(.is-active) {
+			opacity: 1;
+			animation: vamtam-fade-out .3s forwards linear !important;
+		}
+	}
+}
+
+.elementor-field-textual {
+	border-radius: 0;
+	&.elementor-size-lg {
+		min-height: 60px
+	}
+}
+
+.elementor-field-group .elementor-field-textual:focus {
+	box-shadow: none;
+}
+
+// Bijoux-only.
+.elementor-lightbox .elementor-lightbox-image,
+.elementor-lightbox .elementor-video-container {
+	box-shadow: none;
+	border-radius: 0;
+}
+
+// Bijoux-only.
+.rotate-270 {
+	transform: rotate(270deg);
+}
+
+// Fix for "Upgrade Swiper Library" experiment.
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.elementor-swiper-button {
+	cursor: pointer;
+	position: absolute;
+	display: inline-flex;
+	z-index: 1;
+	top: 50%;
+	transform: translateY(-50%);
+
+	&-prev {
+		left: 10px;
+	}
+	&-next {
+		right: 10px;
+	}
+}
+
+// Fix for blink-based browsers so the scrollbar is not included in the calculation (like in max-width:100%).
+body.e--ua-blink .elementor-popup-modal :is(.dialog-widget-content, .dialog-message) {
+	max-width: calc(100vw - var(--vamtam-scrollbar-width, 0) );
+}
+
+// Override overlay option pointer-events: all
+.elementor-popup-modal.vamtam-header-mega-menu {
+	pointer-events: none !important;
+}
+
+// ---------------- Custom Widget Styles -------------- //
+
+.elementor-blockquote footer {
+	align-items: center;
+}
+
+.elementor-blockquote__tweet-button {
+	align-self: center;
+}
+
+// Button
+.elementor-widget-button {
+	&.vamtam-el-btn-flex[data-widget_type="button.default"] {
+		&, .elementor-widget-container, .elementor-button-wrapper, .elementor-button {  // keep .elementor-widget-container
+			height: 100%;
+		}
+		.elementor-button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&.elementor-align-left {
+			.elementor-button {
+				justify-content: flex-start;
+			}
+		}
+		&.elementor-align-center {
+			.elementor-button {
+				justify-content: center;
+			}
+		}
+		&.elementor-align-right {
+			.elementor-button {
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	.elementor-button:hover {
+		cursor: pointer;
+	}
+
+	&.vamtam-has-underline-anim {
+		.elementor-button {
+			position: relative;
+			&::after {
+				content: "";
+				z-index: 1;
+				display: block;
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				right: 0;
+				height: 5px;
+				background-size: 200% 100%;
+				body.e--ua-webkit & {
+					background-size: 200.5% 100%;
+				}
+				background-position: right center;
+				transition: all 1s ease;
+				background-image: linear-gradient(to right, var(--vamtam-underline-bg-hover-color ,var(--vamtam-accent-color-1)) 50%, var(--vamtam-underline-bg-color, var(--vamtam-accent-color-2)) 50%);
+			}
+			&:hover {
+				&::after {
+					background-position: left center;
+				}
+			}
+		}
+		&.hidden {
+			z-index: -99999;
+			pointer-events: none;
+			transition: none !important;
+			opacity: 0 !important;
+		}
+	}
+}
+
+// Gallery
+.elementor-widget-gallery {
+	// Safari-only fix for elementor gallery items.
+	.elementor-gallery-item {
+		// Add on element with overflow
+		-webkit-mask-image: -webkit-radial-gradient(white, black);
+	}
+}
+
+
+// Icon.
+.elementor-widget-icon {
+	// Caridad-only.
+	&.vamtam-popup-toggle.vamtam-caridad-overlay {
+		@keyframes vamtam-overlay-menu-top {
+			0% {
+				opacity: 1;
+				transform: rotate(0) scaleX(1) translateX(0);
+				transform-origin: left center;
+			}
+			30% {
+				opacity: 1;
+				transform: rotate(0) scaleX(0) translateX(0);
+			}
+			30.1% {
+				opacity: 0;
+				transform: rotate(0) scaleX(0) translateX(6%);
+			}
+			31% {
+				opacity: 1;
+				transform: rotate(45deg) scaleX(0) translateX(6%);
+			}
+			100%,80% {
+				opacity: 1;
+				transform: rotate(45deg) scaleX(1) translateX(6%);
+				transform-origin: left center;
+			}
+		}
+		@keyframes vamtam-overlay-menu-bottom {
+			0% {
+				opacity: 1;
+				transform: rotate(0) scaleX(1) translateX(0);
+				transform-origin: right center;
+			}
+			50% {
+				opacity: 1;
+				transform: rotate(0) scaleX(0) translateX(0);
+			}
+			50.1% {
+				opacity: 0;
+				y: 0;
+				transform: rotate(0) scaleX(0) translateX(-6%);
+			}
+			51%,55% {
+				opacity: 1;
+				y: 0;
+				transform: rotate(-45deg) scaleX(0) translateX(-6%);
+			}
+			100% {
+				opacity: 1;
+				y: 0;
+				transform: rotate(-45deg) scaleX(1) translateX(-6%);
+				transform-origin: right center;
+			}
+		}
+		@keyframes vamtam-overlay-menu-close-top {
+			0% {
+				opacity: 1;
+				x: 1;
+				transform: rotate(45deg) scaleX(1);
+				transform-origin: left center;
+			}
+			50% {
+				opacity: 1;
+				x: 0;
+				y:50%;
+				transform: rotate(0deg) scaleX(1);
+				transform-origin: center center;
+			}
+			100% {
+				opacity: 1;
+				x: 0;
+				y:0%;
+				transform: rotate(0deg) scaleX(1);
+				transform-origin: center center;
+			}
+		}
+		@keyframes vamtam-overlay-menu-close-bottom {
+			0% {
+				opacity: 1;
+				y: 0;
+				x: -1;
+				transform: rotate(-45deg) scaleX(1);
+				transform-origin: right center;
+			}
+			50% {
+				opacity: 1;
+				y: 50%;
+				x: 0;
+				transform: rotate(0deg) scaleX(1);
+				transform-origin: center center;
+			}
+			100% {
+				opacity: 1;
+				y: 8;
+				x: 0;
+				transform: rotate(0deg) scaleX(1);
+				transform-origin: center center;
+			}
+		}
+		@keyframes vamtam-overlay-menu-hide {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+		@keyframes vamtam-overlay-menu-link-up {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(-25%);
+			}
+		}
+		@keyframes vamtam-overlay-menu-link-down {
+			0% {
+				transform: translateY(-25%);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+		&.vamtam-popup-toggle-clone {
+			&.is-active {
+				a.elementor-icon {
+					animation: vamtam-overlay-menu-link-up forwards .9s ease;
+				}
+				svg.overlay-menu {
+					overflow: visible;
+					.top {
+						animation: vamtam-overlay-menu-top forwards .9s ease;
+					}
+					.bottom {
+						animation: vamtam-overlay-menu-bottom forwards .9s ease;
+					}
+				}
+			}
+			&.is-closed {
+				opacity: 1;
+				animation: vamtam-overlay-menu-hide 2s forwards linear;
+				a.elementor-icon {
+					animation: vamtam-overlay-menu-link-down forwards .9s ease;
+				}
+				svg.overlay-menu {
+					overflow: visible;
+					.top {
+						animation: vamtam-overlay-menu-close-top forwards .9s ease;
+					}
+					.bottom {
+						animation: vamtam-overlay-menu-close-bottom forwards .9s ease;
+					}
+				}
+			}
+		}
+		&:not(.vamtam-popup-toggle-clone).clone-active {
+			transition: none !important;
+			opacity: 0 !important;
+		}
+		.elementor-icon {
+			vertical-align: middle;
+		}
+	}
+}
+
+// Icon-Box
+.elementor-widget-icon-box {
+	&.elementor-shape-vamtam-amorph .elementor-icon {
+		// Base64 version of vamtam-amorph-shape.
+		mask: data-uri('image/svg+xml;base64', '../../../assets/images/vamtam-amorph-shape.svg');
+	}
+
+	// Maintain flex for all devices for icon box widget (icon left/right).
+	&.vamtam-el-widget-icon-box-flex {
+		&.elementor-position-inline-start,
+		&.elementor-position-inline-end {
+			.elementor-icon-box-wrapper {
+				display: flex;
+				align-items: center;
+				.elementor-icon-box-icon {
+					display: inline-flex;
+					flex: 0 0 auto;
+				}
+			}
+		}
+
+		&.elementor-position-inline-start {
+			.elementor-icon-box-icon {
+				margin-right: 10px !important;
+			}
+		}
+
+		&.elementor-position-inline-end {
+			.elementor-icon-box-wrapper {
+				flex-direction: row-reverse;
+			}
+			.elementor-icon-box-icon {
+				margin-left: 10px !important;
+			}
+		}
+	}
+
+	.elementor-icon-box-title {
+		margin-top: 0;
+	}
+
+	// Whole box is link.
+	&.vamtam-has-box-is-link {
+		a.elementor-icon-box-wrapper {
+			display: block;
+
+			.elementor-icon-box-description,
+			.elementor-icon-box-title {
+				transition: all .3s;
+			}
+		}
+	}
+}
+
+// Icon-List
+.elementor-widget-icon-list {
+	// Bijoux-only.
+	.elementor-icon-list-item {
+		.elementor-icon-list-icon i,
+		.elementor-icon-list-text {
+			transition: all .3s ease;
+		}
+	}
+}
+
+// Image-Box
+.elementor-widget-image-box {
+	&.elementor-widget .elementor-image-box-img img {
+		display: inline-block;
+	}
+
+	&.vamtam-has-bg-mask {
+		// Base64 version of vamtam-imageBox-bg.
+		mask: data-uri('image/svg+xml;base64','../../../assets/images/vamtam-imageBox-bg.svg');
+		mask-repeat: no-repeat;
+		mask-size: 100% 100%;
+	}
+	&.vamtam-has-image-mask .elementor-image-box-img img {
+		// Base64 version of vamtam-imageBox-img.svg.
+		mask: data-uri('image/svg+xml;base64','../../../assets/images/vamtam-imageBox-img.svg');
+		mask-repeat: no-repeat;
+		mask-size: 100% 100%;
+	}
+	&.vamtam-has-eye {
+		&.vamtam-has-bg-mask {
+			.vamtam-eye {
+				position: absolute;
+				left: 0;
+			}
+		}
+		.vamtam-eye {
+			position: relative;
+			bottom: 12px;
+			width: 100%;
+
+			&, .outer, .inner {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.outer, .inner {
+				// Base64 version of vamtam-imageBox-eye.svg.
+				mask: data-uri('image/svg+xml;base64','../../../assets/images/vamtam-imageBox-eye.svg');
+				mask-repeat: no-repeat;
+					mask-size: 100% 100%;
+			}
+			.outer {
+				height: 50px;
+				width: 50px;
+			}
+			.inner {
+				height: 26px;
+				width: 26px;
+			}
+			.eye {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				&, &:after {
+					border-radius: 50%;
+				}
+				&:after {
+					content: ' ';
+					position: absolute;
+					height: 8px;
+					width: 8px;
+					top: 5px;
+				}
+			}
+		}
+	}
+	.elementor-image-box-content {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	// Whole box is link.
+	&.vamtam-has-box-is-link {
+		a.elementor-image-box-wrapper {
+			display: block;
+
+			.elementor-image-box-description,
+			.elementor-image-box-title {
+				transition: all .3s;
+			}
+		}
+	}
+}
+
+// Image.
+.elementor-widget-image {
+	&[data-settings*="imageGrowWithScale"],
+	.elementor-editor-active &[class*="imageGrowWithScale"] {
+		.vamtam-image-wrapper {
+			display: inline-block;
+			width: 100%;
+			img {
+				width: 100% !important;
+			}
+		}
+	}
+	&.imageGrowWithScaleLeft .vamtam-image-wrapper {
+		will-change: clip-path;
+		animation-name: vamtam-grow-left;
+		animation-timing-function: cubic-bezier(0.4, 0, 0, 0.9);
+	}
+	&.imageGrowWithScaleRight .vamtam-image-wrapper {
+		will-change: clip-path;
+		animation-name: vamtam-grow-right;
+		animation-timing-function: cubic-bezier(0.4, 0, 0, 0.9);
+	}
+	&.imageGrowWithScaleTop .vamtam-image-wrapper {
+		will-change: clip-path;
+		animation-name: vamtam-grow-top;
+		animation-timing-function: cubic-bezier(0.4, 0, 0, 0.9);
+	}
+	&.imageGrowWithScaleBottom .vamtam-image-wrapper {
+		will-change: clip-path;
+		animation-name: vamtam-grow-bottom;
+		animation-timing-function: cubic-bezier(0.4, 0, 0, 0.9);
+	}
+	img.imageGrowWithScaleLeft,
+	img.imageGrowWithScaleRight,
+	img.imageGrowWithScaleTop,
+	img.imageGrowWithScaleBottom {
+		animation-name: vamtam-scale-out;
+		animation-timing-function: cubic-bezier(0.4, 0, 0, 0.9);
+	}
+
+	&.growFromLeftScroll,
+	&.growFromRightScroll {
+		&.animated-fast .elementor-image img {
+			transition-duration: .1s;
+		}
+		&.animated-slow .elementor-image img {
+			transition-duration: .1s;
+		}
+	}
+
+	&.growFromLeftScroll {
+		@val: calc(100% - var(--vamtam-scroll-ratio));
+		.elementor-image img {
+			clip-path:inset(0 @val 0 0);
+			transition: clip-path .1s ease;
+			will-change: clip-path;
+		}
+	}
+	&.growFromRightScroll {
+		@val: calc(100% - var(--vamtam-scroll-ratio));
+		.elementor-image img {
+			clip-path:inset(0 0 0 @val);
+			transition: clip-path .1s ease;
+			will-change: clip-path;
+		}
+	}
+
+	.mega-menu {
+		> a:not([href]) {
+			cursor: pointer;
+		}
+	}
+}
+
+// Nav menu
+.elementor-widget-nav-menu {
+
+	html.ios-safari & li {
+		outline: 0 !important;
+	}
+
+	ul.elementor-nav-menu {
+		flex-basis: 100%;
+		z-index: 99;
+		margin: 0;
+
+		li {
+			z-index: 99;
+		}
+	}
+
+	.elementor-nav-menu ul ul a,
+	.elementor-nav-menu--dropdown a	{
+		&,
+		&:active,
+		&:focus,
+		&:hover {
+			border-left: 0 solid transparent;
+		}
+	}
+
+	.elementor-nav-menu--dropdown .elementor-item-active {
+		font-weight: 600;
+	}
+
+	.elementor-nav-menu--main {
+		.current-menu-ancestor {
+			> a.elementor-item:after {
+				width: 100% !important;
+				opacity: 1 !important;
+				left: 0% !important;
+			}
+		}
+
+		.elementor-item.elementor-item-active,
+		.current-menu-ancestor > a {
+			font-weight: 700;
+		}
+
+		> .elementor-nav-menu > .current-menu-ancestor .elementor-item:not(:hover):not(:focus):not(.elementor-item-active):not(.highlighted) {
+			&:before, &:after {
+				opacity: 1;
+			}
+		}
+
+		&:not(.e--pointer-text):not(.e--pointer-none):not(.e--pointer-background) {
+			> .elementor-nav-menu > .current-menu-ancestor .elementor-item:not(:hover):not(:focus):not(.elementor-item-active):not(.highlighted) {
+				&:before, &:after {
+					left: auto;
+				}
+			}
+		}
+
+		// Line through pointer.
+		&.e--pointer-line-through {
+			.elementor-item:after {
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				z-index: -1;
+			}
+
+			.elementor-item.elementor-item-active:after,
+			.current-menu-ancestor .elementor-item:after {
+				width: 100% !important;
+			}
+
+			// Horizontal-grow animation.
+			&.e--animation-horizontal-grow .elementor-item {
+				&:after {
+					opacity: 1 !important;
+					transition: background-color .4s ease, width .3s ease-in;
+					width: 0;
+				}
+				&:hover:not(.elementor-item-active):after {
+					width: 100% !important;
+				}
+			}
+		}
+
+		// Prefix pointer.
+		&.e--pointer-prefix {
+			// Theme-dependant values.
+			@prefix-width: 10px;
+			@prefix-active-width: 25px;
+			@prefix-height: 1px;
+
+			.elementor-item:after {
+				bottom: unset;
+				z-index: -1;
+				transform: translateX( calc( -100% - 10px ) );
+				height: @prefix-height;
+				width: @prefix-width !important;
+			}
+
+			.elementor-item.elementor-item-active:after,
+			.current-menu-ancestor .elementor-item:after {
+				width: @prefix-active-width !important;
+			}
+
+			// Prefix-grow animation.
+			&.e--animation-prefix-grow .elementor-item {
+				&:after {
+					opacity: 1 !important;
+					transition: background-color .4s ease, width .4s ease;
+				}
+				&:hover:not(.elementor-item-active):after {
+					width: @prefix-active-width !important;
+				}
+			}
+
+			// Bijoux-only.
+			> ul > li > ul.sub-menu {
+				margin-left: -35px !important;
+
+				.sub-menu {
+					margin-top: 0 !important;
+					margin-left: 0 !important;
+					top: 0 !important;
+					left: 100% !important;
+				}
+			}
+		}
+	}
+
+	// Nav menu dropdown item override.
+	ul.elementor-nav-menu--dropdown a,
+	ul.elementor-nav-menu--dropdown a:focus,
+	ul.elementor-nav-menu--dropdown a:hover {
+		border-left-width: 0;
+	}
+
+	// Pointer bounce anim.
+	.e--animation-bounce {
+		@keyframes nav-menu--pointer-bounce {
+			0%{
+			  opacity: 0;
+			  transform: scale(0) translateY(200%);
+			}
+			30%{
+				opacity: 0.5;
+				transform: scale(0.89) translateY(-35%);
+			}
+			50%{
+			  opacity: 0.9;
+			  transform: scale(1) translateY(-35%);
+			}
+			70%{
+				opacity: 0.9;
+				transform: scale(1.2) translateY(35%);
+			}
+			80%{
+			  opacity: 1;
+			  transform: scale(0.89) translateY(0);
+			}
+			90%{
+				opacity: 1;
+				transform: scale(0.89) translateY(0);
+			}
+			100%{
+			  opacity: 1;
+			  transform: scale(1) translateY(0);
+			}
+		}
+
+		.elementor-item:not(.elementor-item-active):hover:before,
+		.elementor-item:not(.elementor-item-active):focus:before,
+		.elementor-item:not(.elementor-item-active).highlighted:before {
+			animation-name: nav-menu--pointer-bounce;
+			animation-fill-mode: forwards;
+			animation-duration: .5s;
+		}
+	}
+
+	&.vamtam-has-custom-divider {
+		.elementor-nav-menu--dropdown li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:not(:last-child) {
+				border-bottom: none;
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					height: 1px;
+					z-index: 10;
+					background-color: var(--vamtam-accent-color-1);
+				}
+			}
+		}
+	}
+
+	// Bijoux-after.
+	.elementor-menu-toggle {
+		&.elementor-active {
+			:is(i.eicon-menu-bar, .elementor-menu-toggle__icon--close) {
+				&::before {
+					font-family: 'vamtam-theme' !important;
+					content: icon('vamtam-theme-close-sample') !important;
+				}
+			}
+		}
+		// Preloading of the close icon.
+		i.eicon-menu-bar::after {
+			font-family: 'vamtam-theme';
+			content: icon('vamtam-theme-close-sample');
+			width: 0;
+			height: 0;
+			opacity: 0;
+			position: absolute;
+			overflow: hidden;
+		}
+	}
+
+	&:not(.vamtam-has-submenu-icon) {
+		.elementor-nav-menu .sub-arrow {
+			display: none;
+		}
+	}
+}
+
+// Section
+.elementor-section {
+	&.elementor-element {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+// Heading
+.elementor-widget-heading {
+	// Caridad-only.
+	&[data-widget_type="heading.heading_caridad"] {
+		.vamtam-heading-wrapper {
+			display: flex;
+			flex-flow: column wrap;
+			margin: 0;
+
+			> * {
+				width: max-content;
+				padding: 0 20px;
+			}
+		}
+		&.vamtam-align-justify {
+			.vamtam-heading-wrapper > * {
+				width: 100%;
+			}
+		}
+	}
+}
+
+// Tabs widget.
+.elementor-widget-tabs {
+	.elementor-tab-desktop-title {
+		padding: 20px;
+	}
+
+	.elementor-tabs-wrapper {
+		padding: 20px;
+	}
+
+	// Title numbering mask.
+	&.vamtam-has-numbering-bg {
+		.elementor-tab-title {
+			display: flex;
+			align-items: center;
+
+			.title-numbering {
+				width: 35px;
+				height: 36px;
+				margin-right: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			&.elementor-active .title-numbering {
+				// Base64 version of vamtam-tabs-numbering-bg.
+				background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNSAzNiI+PHBhdGggZmlsbD0iIzE2NzI4NyIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAgNy4zYzQuMiA0LjMgMy44IDkuNiAzLjggMTUuMiAwIDUtMy4zIDguNS0zLjggOS0uNy44LTEuNiAxLjQtMi40IDJsLjEtLjJhNiA2IDAgMCAwIDIuNi0xLjkgMjEgMjEgMCAwIDAgMy41LTUuNmMuMS0uMS4zIDAgLjIuMWE5LjggOS44IDAgMCAxLTEuMyAzLjIgMjAuNyAyMC43IDAgMCAxLTIgMi43IDcuNCA3LjQgMCAwIDEtMi44IDIgMTkuNiAxOS42IDAgMCAxLTMuMiAxYy0xLjkuNy0zLjggMS01LjcgMS02LjctLjEtNy40LjUtMTMuMi00LjNBMTYuNyAxNi43IDAgMCAxIC41IDE1LjggMTMuMiAxMy4yIDAgMCAxIDMgMTAuNUM0IDkuMiA1IDggNi4yIDYuOGExOSAxOSAwIDAgMSA0LTNjMS41LS44IDMuMi0xLjQgNC44LTEuNiAxLjctLjMgMy40LS4yIDUgLjMuMyAwIC4yLjIgMCAuMi0xLjYtLjQtMy4zLS40LTQuOSAwLTEuNi4yLTMuMi44LTQuNiAxLjZsLS4zLjFjMi41LTEgNS4zLTEuNSA3LjYtMS43IDQuOC0uMyA4LjUgMSAxMi4yIDQuNnptLTMuMi0zLjlsLS4xLjItNS0zVi40YTExIDExIDAgMCAxIDUgM3oiLz48L3N2Zz4K');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		}
+	}
+
+	// Empty title button
+	&.vamtam-has-empty-title-button {
+		.elementor-tabs-wrapper {
+			padding-left: 0;
+			padding-right: 0;
+			align-items: center;
+		}
+
+		&.vamtam-has-nav-over-content {
+			.elementor-tabs-wrapper {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				z-index: 1;
+			}
+		}
+
+		.elementor-tab-title {
+			padding: 0 20px;
+		}
+
+		.vamtam-no-title {
+			a {
+				display: block;
+				background-color: var(--vamtam-accent-color-4);
+			}
+			&.elementor-active {
+				a {
+					background-color: var(--vamtam-accent-color-3);
+				}
+			}
+		}
+	}
+
+	// Disable default switch-tab js animation.
+	&.vamtam-has-disable-def-anim {
+		.elementor-tab-content.elementor-active {
+			display: block !important;
+		}
+	}
+
+	// Bijoux-only.
+	.elementor-tab-desktop-title {
+		padding: 20px 0;
+	}
+	.elementor-tab-content {
+		padding: 0;
+	}
+}
+
+// Products archives.
+.elementor-widget-wc-archive-products {
+	.woocommerce-result-count,
+	.woocommerce-ordering {
+		margin: 20px 0;
+	}
+	.woocommerce-ordering select {
+		margin-bottom: 0 !important;
+		padding-right: 40px;
+	}
+	.woocommerce-result-count {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	&.elementor-widget {
+		// Products archives only.
+		&.elementor-element.elementor-wc-products .navigation {
+			.next:after,
+			.prev:after {
+				top: unset;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+// Products.
+.elementor-widget-woocommerce-products {
+	&.vamtam-has-hide-price {
+		.products .product span.price {
+			display: none;
+		}
+	}
+
+	&.vamtam-has-no-headers {
+		.products.table-layout .vamtam-headers {
+			display: none;
+		}
+	}
+
+	// Table layout defaults.
+	.table-layout {
+		.product {
+			.woocommerce-loop-product__title {
+				font-size: 1em;
+			}
+
+			// Theme-dependant.
+			.price {
+				font-weight: 400;
+				font-size: .857em;
+			}
+
+			.quantity input {
+				width: 100%;
+
+				// Theme dependant.
+				border-width: 0 0 1px 0;
+			}
+
+			.vamtam-add-to-cart-wrap {
+				> a.button,
+				> .added_to_cart,
+				> .add_to_cart {
+					width: 100%;
+				}
+			}
+		}
+		.vamtam-headers {
+			th {
+				&:extend(.vamtam-font-h6);
+			}
+		}
+		tr, th, td {
+			border: solid var(--vamtam-default-line-color) 1px;
+			padding: 0;
+			margin: 0;
+		}
+		// Lagar-only.
+		.vamtam-product {
+			td:first-child {
+				padding-left: 30px;
+			}
+			td .vamtam-add-to-cart-wrap {
+				padding-left: 20px;
+			}
+		}
+	}
+}
+
+// Products Categories
+.elementor-widget-wc-categories {
+	&:not(.vamtam-no-count--yes) {
+		.woocommerce-loop-category__title .count {
+			display: none;
+		}
+	}
+
+	&.vamtam-has-hide-title {
+		.woocommerce-loop-category__title {
+			display: none;
+		}
+		// Lagar-only.
+		ul.products li.product-category.product {
+			// Lagar has only title for cats so if title is hidden, we have no content
+			// so we don't need whitespace for the hover slide-up animation.
+			.vamtam-product-cat-content {
+				padding-top: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// Product Images.
+.elementor-widget-woocommerce-product-images {
+	&.vamtam-has-full-sized-gallery:not(.vamtam-mobile-gallery) {
+		.woocommerce-product-gallery__wrapper,
+		.woocommerce-product-gallery--vamtam__wrapper {
+			display: grid;
+			grid-template-columns: 1fr;
+			justify-content: center;
+			align-items: center;
+
+			.woocommerce-product-gallery__image,
+			.woocommerce-product-gallery--vamtam__image {
+				width: 100% !important;
+			}
+		}
+	}
+
+	.woocommerce-product-gallery {
+		&.vamtam-hide {
+			opacity: 0 !important;
+		}
+	}
+}
+
+// Lagar-only.
+// Product Add To Cart
+.elementor-widget-woocommerce-product-add-to-cart {
+	.elementor-add-to-cart .cart .quantity {
+		display: inline-block;
+	}
+
+	form.cart {
+		.added_to_cart.wc-forward {
+			display: none;
+		}
+	}
+
+	&.elementor-add-to-cart--align-justify {
+		.added_to_cart {
+			flex-basis: 100%;
+		}
+	}
+
+	.cart {
+		&.variations_form {
+			.variations {
+				td {
+					width: 100%;
+					display: block;
+					text-align: start;
+				}
+				th {
+					width: 100%;
+					display: block;
+					text-align: start;
+					margin-bottom: 5px;
+				}
+
+				input, textarea, select {
+					width: 100%;
+				}
+			}
+
+			.reset_variations {
+				visibility: hidden !important;
+				display: none !important;
+
+			}
+
+			.woocommerce-variation-price .price {
+				color: inherit;
+				display: flex;
+				flex-direction: row;
+				align-items: baseline;
+			}
+		}
+	}
+
+	.single-product .sold-individually &,
+	.stock.last-one ~ .cart {
+		.single_add_to_cart_button.button[type="submit"] {
+			margin-left: 0;
+		}
+	}
+}
+
+// Product Meta.
+.elementor-widget-woocommerce-product-meta {
+	// Bijoux-only.
+	&.elementor-element {
+		.product_meta {
+			padding: 0;
+			border: 0;
+		}
+		span.detail-content a,
+		span.detail-label {
+			font-family: var(--vamtam-primary-font-font-family);
+			font-weight: bold;
+			font-size: 14px;
+			letter-spacing: 1.17px;
+			line-height: 21px;
+			text-transform: capitalize;
+		}
+		.detail-label {
+			margin-right: 30px;
+			color: var(--vamtam-accent-color-3);
+		}
+		.detail-content a {
+			border: 0;
+			border-bottom: solid 1px var(--vamtam-accent-color-3);
+			padding: 0;
+			color: #D8D8D8;
+
+			&:hover {
+				background: none;
+				background-color: none;
+				color: var(--vamtam-accent-color-1);
+				border-color: var(--vamtam-accent-color-3);
+			}
+		}
+	}
+
+	// Elementor override for ioS/Mac.
+	.e--ua-appleWebkit &.elementor-grid-0:is( .e-grid-align-center, .e-grid-align-right) .elementor-grid {
+		&, .elementor-grid-item {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+// Menu cart widget.
+// @import (reference) "../../../mixins.less";
+// @import (reference) "../../../../buttons.less";
+.elementor-widget-woocommerce-menu-cart {
+
+	.elementor-menu-cart__container.elementor-menu-cart--shown {
+		background-color: rgba(0,0,0,.80);
+	}
+
+	.elementor-menu-cart__container:not(.elementor-menu-cart--shown) .elementor-menu-cart__main {
+		opacity: 1;
+	}
+
+	.elementor-menu-cart__container .elementor-menu-cart__main {
+		width: 30%;
+		// Bijoux-after.
+		min-width: 500px;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content auto;
+		overflow-y: auto;
+		@top-padding: 2%;
+		padding: var(--cart-padding, @top-padding 0 0 0); // put bottom padding in .widget_shopping_cart_content to negate how overflow: scroll works.
+		font-size: 100%;
+
+		// Ipad safari fix.
+		body[data-elementor-device-mode="tablet"].e--ua-safari & {
+			// On safari (Ipad) there seems to be an issue with applying the proper
+			// intrinsic (1fr) parent height value.
+			height: calc(100% - @top-padding);
+		}
+
+		.woocommerce-cart-form__contents {
+			height: auto;
+			max-height: unset;
+			overflow: visible;
+			overflow-x: hidden;
+			grid-row: 1;
+		}
+
+		.product-thumbnail {
+			max-width: 70px;
+			max-height: fit-content;
+			grid-row: 1/2;
+
+			img {
+				display: block;
+			}
+		}
+
+		.product-remove {
+			grid-column: 4;
+			justify-self: flex-end;
+			border: 0;
+			width: auto;
+			height: auto;
+			position: relative;
+
+			// Override some def Elementor styles.
+			> a:not(.elementor_remove_from_cart_button) {
+				display: inline;
+				z-index: initial;
+				overflow: hidden;
+				opacity: 1;
+				position: relative;
+			}
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+
+		.product-price {
+			grid-column: 3;
+			align-self: flex-start;
+			padding-left: 0;
+
+			.quantity {
+				display: flex;
+				min-height: 30px;
+				align-items: center;
+
+				.vamtam-quantity {
+					position: relative;
+					margin-right: 15px;
+
+					svg {
+						fill: currentColor;
+						stroke: currentColor;
+						stroke-width: 0;
+						width: 1em;
+						height: 1em;
+						position: absolute;
+						top: calc(50% - .5em);
+						left: 55%;
+						right: 0;
+						bottom: 0;
+						font-weight: 500;
+						font-size: 16px;
+						pointer-events: none;
+					}
+
+					select {
+						&:hover, &:focus {
+							&:not(:disabled) {
+								border-color: var( --vamtam-accent-color-1 );
+							}
+						}
+
+						&:focus {
+							outline: 0;
+							box-shadow: none;
+						}
+
+						appearance: none;
+						padding: 0 1rem 0 1.5rem !important;
+						height: 2rem;
+						min-width: 5rem;
+						max-width: 100%;
+						border: 1px solid var( --vamtam-default-line-color );
+						transition: border .3s cubic-bezier(0.39,0.575,0.565,1);
+						text-overflow: ellipsis;
+
+						color: inherit;
+						line-height: inherit;
+						font-size: inherit;
+						font-family: inherit;
+						font: inherit;
+						// Overrides
+						background: none !important;
+						margin: 0 !important;
+						padding-bottom: 0 !important;
+						// No border form menu cart/standard below-max (max standard overrides this)
+						border: 0;
+					}
+				}
+
+				.woocommerce-Price-amount {
+					margin-left: auto;
+				}
+			}
+		}
+
+		.product-name {
+			grid-column: 2 / 3;
+			padding: .6em 25px 0 25px;
+
+			> a {
+				.vamtam-line-clamp-2();
+			}
+		}
+
+		.cart_item {
+			display: grid;
+			grid-template-rows: auto auto;
+			grid-template-columns: max-content 50% minmax(20%, auto) 40px;
+			grid-row-gap: 20px;
+			padding: 15px 0;
+			background-color: var(--vamtam-accent-color-5);
+			border: 0;
+
+			&:not(:last-of-type),
+			&:not(:first-of-type) {
+				margin: 0;
+				border: none;
+			}
+		}
+
+		.vamtam-close {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			transition: all .3s ease;
+			stroke-width: 0;
+			stroke: currentColor;
+			fill: currentColor;
+			&:hover {
+				stroke: currentColor;
+				fill: currentColor;
+			}
+			vertical-align: middle;
+			* {
+				pointer-events: none;
+			}
+		}
+
+		> .vamtam-elementor-menu-cart__header,
+		> .widget_shopping_cart_content .cart_item,
+		> .widget_shopping_cart_content > :not(.woocommerce-cart-form__contents) {
+			padding-left: 7%; // Should also be replicated in Elementor selector (woocommerce-menu-cart.php->padding for footer btns).
+			padding-right: 7%; // Should also be replicated in Elementor selector (woocommerce-menu-cart.php->padding for footer btns).
+		}
+
+		.widget_shopping_cart_content {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr min-content min-content;
+
+			// Empty side cart
+			.woocommerce-mini-cart__empty-message {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+
+				&:before {
+					content: "\e8e4";
+					display: block;
+					font-family: eicons;
+					font-size: 10em;
+					font-weight: 400;
+					font-style: normal;
+					font-variant: normal;
+					line-height: 1;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					color: var(--vamtam-accent-color-6);
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		.vamtam-elementor-menu-cart__header {
+			display: flex;
+			align-items: center;
+			font-size: 16px;
+			font-weight: bold;
+			color: var(--vamtam-accent-color-6);
+			padding-bottom: 20px;
+
+			.elementor-menu-cart__close-button {
+				margin: 0;
+				margin-left: auto;
+				align-self: center;
+				width: auto;
+				height: auto;
+				display: flex;
+				flex-direction: column;
+				justify-items: center;
+
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+
+			.elementor-menu-cart__close-button-custom {
+				margin-bottom: 0;
+				margin-top: 0;
+				align-self: center;
+			}
+
+			span.label {
+				margin-right: 15px;
+			}
+		}
+
+		.elementor-menu-cart__footer-buttons {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			grid-row: 3;
+
+			.elementor-button--checkout {
+				order: 1;
+			}
+
+			.elementor-button--view-cart {
+				order: 2;
+			}
+
+			> a {
+				line-height: 30px;
+				height: 100%;
+			}
+		}
+
+		.elementor-menu-cart__product,
+		.elementor-menu-cart__products,
+		.elementor-menu-cart__subtotal {
+			border-color: var(--vamtam-accent-color-8);
+		}
+
+		//base style overrides so mobile styles are always used for menu cart.
+		.product-name,
+		.product-remove {
+			display: flex;
+			align-items: stretch;
+			border: none;
+			border-radius: 0;
+		}
+
+		.product-remove {
+			grid-row: 1;
+			grid-column: 3;
+			bottom: 0;
+
+			a.remove_from_cart_button {
+				display: flex;
+				flex-wrap: nowrap;
+			}
+		}
+		.product-price {
+			grid-column: 1/4;
+			color: inherit;
+
+			&, .amount {
+				font-weight: inherit;
+			}
+
+			// Caridad-only.
+			&::before {
+				border-color: var(--vamtam-accent-color-8);
+			}
+		}
+		.product-name {
+			flex-direction: column;
+			padding-top: 0;
+			padding-left: 20px;
+			padding-right: 25px;
+		}
+		.product-thumbnail {
+			grid-row: 1/3;
+			> a, > a > img {
+				display: block;
+			}
+		}
+		.cart_item {
+			grid-template-rows: auto;
+			grid-template-columns: ~"min(25%, 70px)" auto auto;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.elementor-menu-cart__container {
+		height: 100vh; // elementor pro 3.6 fix
+
+		.elementor-menu-cart__subtotal {
+			grid-row: 2;
+			display: flex;
+			padding:  30px 0;
+			color: var(--vamtam-accent-color-6);
+			font-size: 16px;
+			justify-content: space-between;
+		}
+	}
+	&:not([class*="vamtam-subtotal-align-"]) {
+		.amount {
+			margin-left: auto;
+		}
+		.tax_label {
+			margin-left: 5px;
+		}
+	}
+	&.vamtam-subtotal-align- {
+		&left, &center, &right {
+			.elementor-menu-cart__subtotal {
+				gap: 10px;
+			}
+		}
+		&left .elementor-menu-cart__subtotal {
+			justify-content: start;
+		}
+		&center .elementor-menu-cart__subtotal {
+			justify-content: center;
+		}
+		&right .elementor-menu-cart__subtotal {
+			justify-content: end;
+		}
+	}
+
+	.elementor-menu-cart__toggle .elementor-button-icon-qty[data-counter] {
+		letter-spacing: normal;
+	}
+
+	// This fixes an issue where the card icon flickers on page-load when the "Show Empty" option is used.
+	&.elementor-menu-cart--empty-indicator-hide .elementor-menu-cart__toggle .elementor-button-icon-qty[data-counter="0"] {
+		&, :before {
+			display: none !important;
+		}
+	}
+
+	// This fixes a bug where the "Show Empty" option is set to true but the empty cart is still getting hidden from js.
+	&.hidden:not(.elementor-menu-cart--empty-indicator-hide) {
+		display: block;
+		visibility: visible;
+	}
+	// Above rule should not apply to sticky-header spacer el.
+	.elementor-sticky__spacer &.hidden:not(.elementor-menu-cart--empty-indicator-hide) {
+		display: none;
+		visibility: hidden;
+	}
+
+	// Remove btn - Increased specificity.
+	&:not(.elementor-menu-cart--show-remove-button-yes) .elementor-menu-cart__product-remove {
+		display: none;
+	}
+
+	// Divider - Increased specificity.
+	&.elementor-menu-cart--show-divider-yes .elementor-menu-cart__product:not(:last-of-type),
+	&.elementor-menu-cart--show-divider-yes .elementor-menu-cart__products,
+	&.elementor-menu-cart--show-divider-yes .elementor-menu-cart__subtotal {
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+	}
+
+	// This is to keep the items number vertically centered on the cart toggle (bubble).
+	&.elementor-menu-cart--items-indicator-bubble .elementor-menu-cart__toggle .elementor-button-icon .elementor-button-icon-qty[data-counter] {
+		line-height: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+	}
+
+	// This is to override the global button options (if set).
+	.elementor-menu-cart__toggle .elementor-button:focus {
+		background-color: var( --toggle-button-hover-background-color, transparent);
+	}
+
+	input.vamtam-quantity-input {
+		text-align: center;
+		outline: none;
+		min-height: 30px;
+	}
+
+	// Editor opts with vars.
+	.elementor-menu-cart__wrapper {
+		// Cart Toggle
+		.elementor-menu-cart__toggle {
+			.elementor-button:is(:hover, :focus) {
+				border-style: var(--toggle-button-border-style, solid);
+				border-width: var(--toggle-button-border-width, 1px);
+				border-radius: var(--toggle-button-border-radius, 0);
+			}
+			&:hover {
+				:is(i, svg) {
+					color: var(--toggle-button-icon-hover-color, var(--vamtam-btn-hover-bg-color));
+				}
+			}
+		}
+		// Close Cart Btn.
+		.elementor-menu-cart__close-button {
+			.vamtam-close-cart {
+				color: var(--cart-close-button-color, currentColor);
+				font-size: var(--cart-close-icon-size, 20px);
+			}
+			&:hover .vamtam-close-cart {
+				color: var(--cart-close-button-hover-color, currentColor);
+			}
+		}
+		// Price
+		.elementor-menu-cart__product-price.product-price .quantity .amount {
+			color: var(--product-price-color, inherit);
+		}
+		// Remove Product
+		.product-remove {
+			.vamtam-close.vamtam-trash {
+				font-size: var(--remove-item-button-size, calc(1em - 3px));
+				color: var(--remove-item-button-color, var(--vamtam-accent-color-6, currentColor));
+				&:hover {
+					color: var(--remove-item-button-hover-color, var(--remove-item-button-color, var(--vamtam-accent-color-6, currentColor)));
+				}
+			}
+		}
+		// Divider
+		.elementor-menu-cart__container .elementor-menu-cart__main {
+			.elementor-menu-cart__product,
+			.product-price::before {
+				border-color: var(--divider-color, var(--vamtam-accent-color-7));
+				border-style: var(--divider-style, solid);
+				border-width: 0 0 var(--divider-width, 1px);
+			}
+			.elementor-menu-cart__product {
+				&:not(:first-of-type){
+					margin-top: var(--product-divider-gap, 20px);
+				}
+				&:not(:last-of-type){
+					margin-bottom: var(--product-divider-gap, 20px);
+				}
+			}
+		}
+		// Footer Btns
+		.elementor-menu-cart__footer-buttons {
+			.elementor-button--checkout,
+			.elementor-button--view-cart {
+				align-content: center;
+				border-radius: var(--cart-footer-buttons-border-radius, var(--vamtam-btn-border-radius, 0 ) );
+				&:hover {
+					border-radius: var(--cart-footer-buttons-border-radius, var(--vamtam-btn-hover-border-radius, var(--vamtam-btn-border-radius, 0 ) ) );
+				}
+			}
+			// Checkout
+			.elementor-button.elementor-button--checkout {
+				background-color: var(--checkout-button-background-color, var(--vamtam-btn-bg-color));
+				color: var(--checkout-button-text-color, var(--vamtam-btn-text-color));
+				&:hover {
+					background-color: var(--checkout-button-hover-background-color, var(--vamtam-btn-hover-bg-color));
+					color: var(--checkout-button-hover-text-color, var(--vamtam-btn-hover-text-color));
+				}
+			}
+
+			// View Cart
+			.elementor-button.elementor-button--view-cart {
+				background-color: var(--view-cart-button-background-color, var(--vamtam-btn-bg-color));
+				color: var(--view-cart-button-text-color, var(--vamtam-btn-text-color));
+				&:hover {
+					background-color: var(--view-cart-button-hover-background-color, var(--vamtam-btn-hover-bg-color));
+					color: var(--view-cart-button-hover-text-color, var(--vamtam-btn-hover-text-color));
+				}
+			}
+
+		}
+		// Subtotal
+		.elementor-menu-cart__container .elementor-menu-cart__main .elementor-menu-cart__subtotal {
+			color: var(--menu-cart-subtotal-color, var(--vamtam-accent-color-6));
+			border-color: var(--subtotal-divider-color, var(--vamtam-accent-color-7));
+			border-style: var(--subtotal-divider-style, solid);
+			border-width: var(--subtotal-divider-top-width, 0) var(--subtotal-divider-right-width, 0) var(--subtotal-divider-bottom-width, 1px) var(--subtotal-divider-left-width, 0);
+		}
+	}
+}
+.woocommerce {
+	&.woocommerce-cart,
+	&.woocommerce-checkout {
+		.elementor-widget-woocommerce-menu-cart {
+			&.vamtam-has-hide-cart-checkout {
+				display: none;
+			}
+		}
+	}
+}
+
+// password reset
+.elementor-widget-woocommerce-my-account {
+	.e-my-account-tab:not(.e-my-account-tab__dashboard--custom) .woocommerce .woocommerce-ResetPassword .form-row-last {
+		width: 100%;
+	}
+}
+
+// Posts widget.
+.elementor-widget-posts {
+	.elementor-post {
+		.elementor-post__thumbnail {
+			.vamtam-shape {
+				// Theme-dependant. Each theme should apply it's own post thumb (if supported).
+				background-image: url('data:image/svg+xml,<svg fill="%23f4f1ea" width="100" height="26" xmlns="http://www.w3.org/2000/svg"><path d="M0 1C11.848.948 22.762 5.655 31.096 14.02c4.504 5.062 11.657 7.96 18.46 7.96a23.801 23.801 0 0 0 17.79-7.96C75.696 5.695 88.167 1 100 1v24.987H0V1z"/></svg>');
+
+				position: absolute;
+				background-repeat: repeat-x;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 26px;
+				z-index: 1000;
+			}
+		}
+	}
+	// Caridad-only.
+	&.vamtam-has-theme-read-more-style {
+		.elementor-post__read-more {
+			position: relative;
+			&::after {
+				content: "";
+				z-index: 1;
+				display: block;
+				position: absolute;
+				left: 0;
+				right: 0;
+				height: 2px;
+				bottom: -2px;
+				background-size: 200% 100%;
+				background-position: right center;
+				transition: all 1s ease;
+				background-image: linear-gradient(to right,var(--vamtam-accent-color-1) 50%,var(--vamtam-accent-color-2) 50%);
+			}
+			&:hover {
+				&::after {
+					background-position: left center;
+				}
+			}
+		}
+	}
+}
+
+// Post Navigation.
+.elementor-widget-post-navigation {
+	// Bijoux-only.
+	span.post-navigation__prev--label,
+	span.post-navigation__next--label {
+		font-size: 11px;
+		font-weight: 800;
+		text-transform: uppercase;
+		line-height: 1em;
+		padding-bottom: 14px;
+	}
+	.elementor-post-navigation__separator {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+// Social-Icons widget.
+.elementor-widget-social-icons {
+	&.vamtam-layout-vertical {
+		.elementor-social-icons-wrapper {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.elementor-icon {
+		&, i {
+			transition-duration: .5s;
+		}
+	}
+	// If exists, local option should override kit/global one.
+	a.elementor-icon {
+		font-size: var(--icon-size);
+	}
+}
+
+// Call to action.
+.elementor-widget-call-to-action {
+	// This is to override possible global link text-decoration styles
+	// cause of the way text-decoration works on descendants (only for whole box link).
+	a.elementor-cta {
+		&, &:hover {
+			text-decoration: unset;
+		}
+	}
+
+	// Team Member Skin.
+	&[data-widget_type="call-to-action.team-member"] {
+		.vamtam-tm-social-links-wrap {
+			transition: all .4s ease;
+			.vamtam-tm-social-links {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+				li {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					vertical-align: top;
+				}
+			}
+
+			li,
+			.vamtam-tm-social-icon,
+			.vamtam-tm-divider {
+				display: inline-block;
+			}
+
+			.vamtam-tm-social-icon-wrap {
+				display: inline-flex;
+			}
+		}
+	}
+
+	// Class Skin.
+	&[data-widget_type="call-to-action.class"] {
+		.vamtam-class-info-wrap {
+			transition: all .4s ease;
+			.vamtam-class-info {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+				li {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					vertical-align: top;
+				}
+			}
+
+			li,
+			.vamtam-class-info-icon,
+			.vamtam-tm-divider {
+				display: inline-block;
+			}
+
+			.vamtam-class-info-content-wrap {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				&, .vamtam-class-info-icon, .vamtam-class-info-text {
+					transition: all .3s ease;
+				}
+			}
+		}
+	}
+}
+
+// Search form
+.elementor-widget-search-form {
+	&.elementor-search-form--skin-full_screen .elementor-search-form__container {
+		background-color: var(--vamtam-accent-color-1);
+		opacity: .9;
+
+		::-webkit-search-cancel-button {
+			display: none;
+		}
+
+		input.elementor-search-form__input {
+			font-size: 9em;
+			line-height: 1.3em;
+			&, &:focus {
+				text-align: start;
+				color: var(--vamtam-accent-color-2);
+				border-color: var(--vamtam-accent-color-2);
+				border-width: 0 0 3px 0;
+				border-radius: 0;
+				padding-left: 0;
+				padding-right: 0;
+
+				&::placeholder {
+					color: inherit;
+					opacity: .5;
+				}
+			}
+		}
+
+		.dialog-close-button {
+			color: var(--vamtam-accent-color-2);
+			font-size: 3em;
+			right: .6em;
+			top: .6em;
+			margin-top: 0;
+			padding: .2em;
+		}
+	}
+}
+
+// Vamtam Animated Headline.
+.elementor-widget-vamtam-animated-headline {
+	// Blurred letters anim.
+	// Anim triggering is being handled from vamtam-animated-headline.js
+	&.elementor-headline--style-blurred_letters {
+		@keyframes vamtam-blurred-letters {
+			0% {
+				filter: blur(10px);
+				opacity: 0;
+			}
+			20% {
+				filter: blur(10px);
+				opacity: 0;
+			}
+			100% {
+				filter: blur(0);
+				opacity: 1;
+			}
+		}
+		.vamtam-word {
+			position: relative;
+			display: inline-flex;
+			.vamtam-letter {
+				opacity: 0;
+			}
+		}
+	}
+
+	.elementor-headline {
+		margin: 0;
+	}
+}
+
+// Form.
+.elementor-widget-form {
+	.elementor-field-type-acceptance {
+		.elementor-field-option {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	// Caridad-only.
+	.elementor-field-type-checkbox {
+		.elementor-field-subgroup.elementor-subgroup-inline {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-auto-rows: 1fr;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: nowrap;
+		}
+	}
+
+	// links inside form labels to inherit styles from label instead of global kit link selector
+	label a {
+		font: inherit;
+		color: inherit;
+		text-transform: inherit;
+	}
+}
+
+// Slides.
+.elementor-widget-slides {
+	.elementor-swiper-button {
+		transition: color .3s ease;
+	}
+	&.elementor-arrows-position-overlap {
+		.elementor-swiper-button-prev {
+			left: -.6em;
+		}
+		.elementor-swiper-button-next {
+			right: -.6em;
+		}
+	}
+
+	// Bijoux-only.
+	.swiper-slide-inner {
+		padding: 0;
+	}
+
+	// Caridad-only
+	&.vamtam-has-theme-arrows-style {
+		.elementor-swiper-button {
+			font-size: 18px;
+			outline: none;
+			user-select: none;
+			top: 30px;
+			&-prev {
+				left: calc(100% - 120px);
+    			margin-left: -30px;
+			}
+		}
+		.elementor-slides-wrapper {
+			> .swiper-wrapper.elementor-slides {
+				margin-top: 80px;
+			}
+			// iOS-only. 🤮
+			&:is(.swiper-container-ios, .swiper-ios) {
+				// Fixes an issue where the nav arrows appear on top of the mobile nav-menu on iOS.
+				-webkit-transform: translateZ(0px);
+			}
+		}
+		.elementor-swiper-button-prev,
+		.elementor-swiper-button-next {
+			i {
+				position: absolute;
+				top: calc(50% - .5em);
+   				left: calc(50% - .5em);
+			}
+			&::before {
+				content: "";
+				border: solid 1px var(--vamtam-accent-color-1);
+				border-radius: 50%;
+				width: 60px;
+				height: 60px;
+				transition: border-color .3s ease;
+			}
+		}
+		&.vamtam-nav-align- {
+			&left {
+				.elementor-swiper-button {
+					&-next {
+						right: unset;
+						left: 60px;
+						margin-left: 30px;
+					}
+					&-prev {
+						left: 0;
+						margin-left: 0;
+					}
+				}
+			}
+			&right {
+				.elementor-swiper-button {
+					&-prev {
+						left: calc(100% - 120px);
+						margin-left: -30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Testimonial-Carousel.
+.elementor-widget-testimonial-carousel {
+	.elementor-swiper-button {
+		transition: color .3s ease;
+	}
+	// Caridad-only
+	&.vamtam-has-theme-arrows-style {
+		.elementor-swiper-button {
+			font-size: 18px;
+			outline: none;
+			user-select: none;
+			top: 30px;
+			&-prev {
+				left: calc(100% - 120px);
+    			margin-left: -30px;
+			}
+		}
+		:is(.elementor-main-swiper.swiper-container, .elementor-main-swiper.swiper) {
+			position: relative;
+			.swiper-wrapper {
+				margin-top: 80px;
+			}
+		}
+		.elementor-swiper-button-prev,
+		.elementor-swiper-button-next {
+			i {
+				position: absolute;
+				top: calc(50% - .5em);
+   				left: calc(50% - .5em);
+			}
+			&::before {
+				content: "";
+				border: solid 1px var(--vamtam-accent-color-1);
+				border-radius: 50%;
+				width: 60px;
+				height: 60px;
+				transition: border-color .3s ease;
+			}
+		}
+
+		.elementor-swiper-button {
+			&-next {
+				right: unset;
+				left: 60px;
+				margin-left: 30px;
+			}
+			&-prev {
+				left: 0;
+				margin-left: 0;
+			}
+		}
+		.elementor-section.elementor-element {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	// Make duplicates of slides that were hidden (inner anims, etc) visible.
+	.swiper-slide-duplicate {
+		.elementor-invisible {
+			visibility: visible;
+		}
+	}
+}
+
+.elementor-post-navigation {
+	.post-navigation__next--label,
+	.post-navigation__next--title,
+	.post-navigation__prev--label,
+	.post-navigation__prev--title {
+		white-space: normal;
+		overflow: visible;
+	}
+}
+
+// Video
+.elementor-widget-video {
+	// Safari-only fix
+	body.e--ua-appleWebkit & .elementor-wrapper.elementor-open-inline {
+	will-change: opacity;
+	}
+}
+
+/*
+Fix for Elementor Pro v3.12.0 adding the editor's color-scheme to the page.
+TODO: Remove when fixed.
+*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: unset;
+	}
+}
+
+.dialog-widget-content {
+	background-color: #fff;
+}
+
+// iOS - Safari Disable Link Preview.
+body.e--ua-isTouchDevice.e--ua-appleWebkit a {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+
+form.post-password-form {
+	text-align: center;
+	margin: max(20vh, 50px) auto;
+}

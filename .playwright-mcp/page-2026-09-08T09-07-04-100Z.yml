@@ -1,0 +1,177 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e8]:
+        - link "Évangéliste Ahonga Komlavi" [ref=e9] [cursor=pointer]:
+          - /url: http://ahonga-komlavi.local/
+        - generic [ref=e10]: Site de l'évangéliste Ahonga Komlavi
+      - navigation [ref=e13]:
+        - link "Skip to content" [ref=e14] [cursor=pointer]:
+          - /url: "#main"
+        - list [ref=e16]:
+          - listitem [ref=e17]:
+            - link "Accueil" [ref=e18] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/
+          - listitem [ref=e19]:
+            - link "À propos" [ref=e20] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/about-us
+          - listitem [ref=e21]:
+            - link "Vision" [ref=e22] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#vision
+          - listitem [ref=e23]:
+            - link "Programme" [ref=e24] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#programme
+          - listitem [ref=e25]:
+            - link "Dons" [ref=e26] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/#donner
+          - listitem [ref=e27]:
+            - link "Contact" [ref=e28] [cursor=pointer]:
+              - /url: http://ahonga-komlavi.local/about-us#contact
+  - generic [ref=e30]:
+    - banner [ref=e35]:
+      - heading "Impact" [level=1] [ref=e36]
+    - main [ref=e37]:
+      - article [ref=e39]:
+        - generic [ref=e41]:
+          - generic [ref=e43]:
+            - heading "Évangéliste Ahonga Komlavi" [level=1] [ref=e44]
+            - paragraph [ref=e45]: Un serviteur appelé à conduire les âmes dans la présence de Dieu
+            - paragraph [ref=e46]:
+              - link "Découvrir la vision" [ref=e47] [cursor=pointer]:
+                - /url: "#vision"
+              - link "Soutenir" [ref=e48] [cursor=pointer]:
+                - /url: "#donner"
+          - generic [ref=e50]:
+            - generic [ref=e51]:
+              - generic [ref=e52]: Vision
+              - heading "Notre Vision" [level=2] [ref=e53]
+            - paragraph [ref=e54]: Apporter l’espoir, la foi et la transformation par l’Évangile au Togo et au-delà.
+            - paragraph [ref=e55]: Nous croyons que chaque personne est aimée de Dieu et appelée à une vie de plénitude. Notre vision est de voir des vies transformées, des familles restaurées et des communautés impactées par la puissance du Saint-Esprit.
+            - generic [ref=e56]:
+              - generic [ref=e57]:
+                - img "🏠" [ref=e59]
+                - heading "Familles" [level=3] [ref=e60]
+                - paragraph [ref=e61]: Restaurer les foyers et renforcer les fondements chrétiens dans chaque maison.
+              - generic [ref=e62]:
+                - img "🙏" [ref=e64]
+                - heading "Communautés" [level=3] [ref=e65]
+                - paragraph [ref=e66]: Servir les quartiers et les villages avec amour, compassion et intégrité.
+              - generic [ref=e67]:
+                - img "☀️" [ref=e69]
+                - heading "Jeunesse" [level=3] [ref=e70]
+                - paragraph [ref=e71]: Élever une génération de disciples passionnés par la présence de Dieu.
+            - blockquote [ref=e72]:
+              - paragraph [ref=e73]:
+                - text: « L’Esprit du Seigneur est sur moi, parce qu’il m’a oint pour annoncer une bonne nouvelle aux pauvres ; il m’a envoyé pour guérir ceux qui ont le cœur brisé, pour proclamer aux captifs la délivrance, et aux aveugles le recouvrement de la vue, pour renvoyer libres les opprimés. »
+                - generic [ref=e74]: Luc 4:18
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: Programme
+              - heading "Programme de Prière" [level=2] [ref=e79]
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - strong [ref=e82]: Mardi
+                - generic [ref=e83]: 19h00 – 21h00
+                - paragraph [ref=e84]: Veillée de prière et d’adoration
+              - generic [ref=e85]:
+                - strong [ref=e86]: Mercredi
+                - generic [ref=e87]: 18h30 – 20h00
+                - paragraph [ref=e88]: Étude biblique et partage
+              - generic [ref=e89]:
+                - strong [ref=e90]: Vendredi
+                - generic [ref=e91]: 19h00 – 22h00
+                - paragraph [ref=e92]: Soirée de réveil et d’intercession
+              - generic [ref=e93]:
+                - strong [ref=e94]: Dimanche
+                - generic [ref=e95]: 09h00 – 12h00
+                - paragraph [ref=e96]: Culte d’adoration et prédication
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - generic [ref=e100]: Dons
+              - heading "Soutenir le ministère" [level=2] [ref=e101]
+            - paragraph [ref=e102]: Votre contribution permet de porter l’Évangile plus loin et de soutenir les actions du ministère.
+            - generic [ref=e103]:
+              - generic [ref=e104]:
+                - heading "Mixx by Yas" [level=3] [ref=e105]
+                - paragraph [ref=e106]:
+                  - text: "Numéro :"
+                  - strong [ref=e107]: +228 90 87 78 55
+                - paragraph [ref=e108]:
+                  - link "+228 90 87 78 55" [ref=e109] [cursor=pointer]:
+                    - /url: tel:+22890877855
+              - generic [ref=e110]:
+                - heading "Flooz" [level=3] [ref=e111]
+                - paragraph [ref=e112]:
+                  - text: "Numéro :"
+                  - strong [ref=e113]: +228 99 69 78 48
+                - paragraph [ref=e114]:
+                  - link "+228 99 69 78 48" [ref=e115] [cursor=pointer]:
+                    - /url: tel:+22899697848
+              - generic [ref=e116]:
+                - heading "Western Union / RIA / MoneyGram" [level=3] [ref=e117]
+                - paragraph [ref=e118]:
+                  - text: "Nom :"
+                  - strong [ref=e119]: AHONGAN KOMLAVI
+                - paragraph [ref=e120]: Togo
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - generic [ref=e124]: Prêches
+              - heading "Derniers Prêches" [level=2] [ref=e125]
+            - paragraph [ref=e126]: Messages, méditations et inspirations pour grandir dans la foi.
+            - generic [ref=e127]:
+              - article [ref=e128]:
+                - generic [ref=e130]:
+                  - heading [level=3] [ref=e131]:
+                    - link "La puissance de la prière dans le ministère" [ref=e132] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/la-puissance-de-la-priere-dans-le-ministere/
+                  - paragraph [ref=e133]: La prière est le souffle du ministère. À travers cet enseignement, nous découvrons comment la prière transforme les vies et…
+                  - paragraph [ref=e134]:
+                    - link "Lire la suite →" [ref=e135] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/la-puissance-de-la-priere-dans-le-ministere/
+              - article [ref=e136]:
+                - generic [ref=e138]:
+                  - heading [level=3] [ref=e139]:
+                    - link "Marcher dans la foi comme Abraham" [ref=e140] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/marcher-dans-la-foi-comme-abraham/
+                  - paragraph [ref=e141]: Abraham est appelé le père de la foi. Son exemple nous montre comment quitter les certitudes pour suivre l’appel de…
+                  - paragraph [ref=e142]:
+                    - link "Lire la suite →" [ref=e143] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/marcher-dans-la-foi-comme-abraham/
+              - article [ref=e144]:
+                - generic [ref=e146]:
+                  - heading [level=3] [ref=e147]:
+                    - link "Adorer en esprit et en vérité" [ref=e148] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/adorer-en-esprit-et-en-verite/
+                  - paragraph [ref=e149]: La louange est plus qu’un chant, c’est une posture du cœur. Découvrez comment adorer Dieu en esprit et en vérité…
+                  - paragraph [ref=e150]:
+                    - link "Lire la suite →" [ref=e151] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/adorer-en-esprit-et-en-verite/
+              - article [ref=e152]:
+                - generic [ref=e154]:
+                  - heading [level=3] [ref=e155]:
+                    - link "L’évangile au cœur des communautés togolaises" [ref=e156] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/levangile-au-coeur-des-communautes-togolaises/
+                  - paragraph [ref=e157]: Notre mission porte l’évangile dans les communautés togolaises. Retour sur les dernières actions, témoignages et fruits du ministère sur le…
+                  - paragraph [ref=e158]:
+                    - link "Lire la suite →" [ref=e159] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/levangile-au-coeur-des-communautes-togolaises/
+              - article [ref=e160]:
+                - generic [ref=e162]:
+                  - heading [level=3] [ref=e163]:
+                    - link "Vivre par grâce et non par la loi" [ref=e164] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/vivre-par-grace-et-non-par-la-loi/
+                  - paragraph [ref=e165]: La grâce de Dieu nous libère et nous transforme. Cet enseignement revisite l’équilibre entre la loi et la grâce dans…
+                  - paragraph [ref=e166]:
+                    - link "Lire la suite →" [ref=e167] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/vivre-par-grace-et-non-par-la-loi/
+              - article [ref=e168]:
+                - generic [ref=e170]:
+                  - heading [level=3] [ref=e171]:
+                    - link "L’importance de la communauté chrétienne" [ref=e172] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/limportance-de-la-communaute-chretienne/
+                  - paragraph [ref=e173]: Nous sommes créés pour vivre en communauté. Découvrez comment l’église locale devient un foyer de croissance, de soutien et de…
+                  - paragraph [ref=e174]:
+                    - link "Lire la suite →" [ref=e175] [cursor=pointer]:
+                      - /url: http://ahonga-komlavi.local/limportance-de-la-communaute-chretienne/
+  - generic [ref=e176] [cursor=pointer]
+  - status [ref=e179]

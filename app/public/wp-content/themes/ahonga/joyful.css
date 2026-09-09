@@ -1,0 +1,217 @@
+/* Joyful customizations - Ahonga child theme */
+
+/* Ensure our design system takes precedence */
+body {
+  font-family: var(--font-body) !important;
+  color: var(--color-slate-800) !important;
+  background: #ffffff !important;
+}
+
+/* Hero section improvements */
+.vj-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(38,198,218,0.25) 0%, rgba(245,166,35,0.25) 100%);
+  overflow: hidden;
+}
+
+.vj-hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--color-primary-400);
+  opacity: 0.12;
+  border-radius: 50%;
+  top: -150px;
+  right: -100px;
+}
+
+.vj-hero::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--color-coral-400);
+  opacity: 0.1;
+  border-radius: 50%;
+  bottom: -100px;
+  left: -80px;
+}
+
+/* Stats bar */
+.vj-stats-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 2rem !important;
+  padding: 3rem 0 !important;
+  background: #fff !important;
+  border-bottom: 1px solid var(--color-slate-200) !important;
+}
+
+.vj-stat-item {
+  text-align: center !important;
+}
+
+.vj-stat-number {
+  font-family: var(--font-display) !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: var(--color-primary-600) !important;
+  display: block !important;
+  line-height: 1 !important;
+}
+
+.vj-stat-label {
+  font-size: 0.875rem !important;
+  color: var(--color-slate-500) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-top: 0.5rem !important;
+  font-family: var(--font-accent) !important;
+}
+
+/* Quick access cards */
+.vj-quick-access {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin-top: 2rem !important;
+}
+
+.vj-quick-card {
+  background: #fff !important;
+  border: 1px solid var(--color-slate-200) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+}
+
+.vj-quick-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--color-primary-500) !important;
+}
+
+/* Evangelist section */
+.vj-evangelist {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 4rem !important;
+  align-items: center !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
+}
+
+.vj-evangelist-image img {
+  width: 100% !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.vj-evangelist-content h2 {
+  font-family: var(--font-display) !important;
+  font-size: 2.25rem !important;
+  color: var(--color-slate-800) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.vj-evangelist-content p {
+  color: var(--color-slate-600) !important;
+  line-height: 1.8 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* Post cards */
+.vj-posts-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.vj-post-card {
+  background: #fff !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--color-slate-200) !important;
+  transition: all 0.3s ease !important;
+}
+
+.vj-post-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.vj-post-image {
+  overflow: hidden !important;
+}
+
+.vj-post-image img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.vj-post-card:hover .vj-post-image img {
+  transform: scale(1.05) !important;
+}
+
+.vj-post-category {
+  display: inline-block !important;
+  background: var(--color-primary-500) !important;
+  color: #fff !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 20px !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.vj-read-more {
+  display: inline-block !important;
+  margin-top: 1rem !important;
+  color: var(--color-primary-600) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.vj-read-more:hover {
+  color: var(--color-primary-700) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vj-hero {
+    min-height: 70vh !important;
+  }
+  
+  .vj-evangelist {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .vj-stats-bar {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .vj-quick-access {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .vj-posts-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -1,0 +1,566 @@
+@import (reference) '../../buttons.less';
+@import (reference) '../mixins.less';
+
+// Only for multistep forms (loaded using <iframe>).
+
+// How these styles work:
+// 1: https://givewp.com/documentation/resources/handling-custom-css-in-wordpress/
+// 2: https://github.com/impress-org/givewp-snippet-library/blob/master/form-customizations/css-customizations/multi-step-enqueue-css.php
+
+// Give WP Donations.
+.give-form-templates {
+	min-height: auto !important; // Overriding manual min-height calculation by give plugin.
+	margin: 0;
+	margin-bottom: 50px;
+	&, * {
+		box-sizing: border-box;
+	}
+	.give-form-wrap,
+	.give-receipt-wrap {
+		&,
+		p,
+		.payment .heading,
+		.payment .subheading,
+		.details-table .details-row .detail,
+		.details-table .details-row .value {
+			&:extend(.vamtam-font-primary-font);
+			font-family: var(--vamtam-give-body-font-family, inherit);
+			color: var(--vamtam-primary-font-color) !important;
+		}
+		h2.headline {
+			&:extend(.vamtam-font-h2);
+			font-family: var(--vamtam-give-body-font-family, inherit);
+			color: var(--vamtam-h2-color) !important;
+		}
+		h3.headline {
+			&:extend(.vamtam-font-h3);
+			font-family: var(--vamtam-give-body-font-family, inherit);
+			color: var(--vamtam-h3-color) !important;
+		}
+		.details-table .details-row .value {
+			text-align: center;
+		}
+		.receipt .headline {
+			font-size: x-large;
+		}
+	}
+	.give-form-wrap {
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+
+		.give-section.introduction {
+			align-items: flex-start;
+			.seperator {
+				display: none;
+			}
+			.image {
+				order: 0;
+				padding-top: 400px;
+			}
+			.headline {
+				text-align: start;
+				order: 1;
+				margin: 20px 0 10px 0;
+				font-size: 24px;
+				font-weight: bold;
+				letter-spacing: 0;
+				line-height: 32px;
+				max-width: 100%;
+				color: var( --vamtam-accent-color-1, #052F5C );
+			}
+			.description {
+				order: 2;
+				margin: 10px 0;
+				text-align: start;
+				font-size: 16px;
+  				letter-spacing: 0;
+				line-height: 30px;
+			}
+			.income-stats {
+				order: 3;
+				background-color: transparent;
+				margin: 10px 0;
+				.raised,
+				.goal,
+				.count {
+					border: 0;
+					padding: 0;
+					display: flex;
+					align-items: center;
+					flex-flow: row nowrap;
+					.text {
+						position: relative;
+						order: 1;
+						text-transform: capitalize;
+						&::after {
+							content: ":";
+						}
+						margin-right: 5px;
+					}
+					.number {
+						order: 2;
+					}
+
+					.number, .text {
+						font-family: var(--vamtam-give-body-font-family, inherit);
+						font-size: 14px !important;
+						letter-spacing: 0;
+						line-height: 30px;
+					}
+				}
+				.raised {
+					justify-content: flex-start;
+					.number, .text {
+						color: var(--vamtam-accent-color-2, #F69D94);
+						font-weight: 500;
+					}
+				}
+				.count {
+					display: none;
+				}
+				.goal {
+					justify-content: flex-end;
+					.number, .text {
+						color: #7A8897;
+					}
+				}
+			}
+			.progress-bar {
+				order: 4;
+				border: 0;
+				.give-progress-bar {
+					margin: 10px 0;
+					height: 8px;
+					> span {
+						height: 8px;
+						background-color: var(--vamtam-accent-color-2, #F69D94) !important;
+						background: var(--vamtam-accent-color-2, #F69D94) !important;
+						background-blend-mode: normal !important;
+					}
+				}
+			}
+			.give-btn.advance-btn {
+				margin: 40px 0 0 0;
+			}
+		}
+
+		.give-btn.advance-btn,
+		.give-btn.give-submit {
+			display: inline-block;
+			text-align: center;
+			transition: all .3s;
+			box-shadow: none;
+			width: auto;
+			max-width: 180px !important;
+			min-width: 180px !important;
+
+			font-family: var(--vamtam-give-body-font-family, inherit);
+			font-size: 16px;
+			line-height: 25px;
+			letter-spacing: 0px;
+			font-weight: bold;
+
+			fill: var( --vamtam-accent-color-5, #FFFFFF ) !important;
+			color: var( --vamtam-accent-color-5, #FFFFFF ) !important;
+			background-color: var( --vamtam-accent-color-1, #052F5C ) !important;
+			border: 0 !important;
+			filter: none !important;
+			&:hover {
+				background-color: var( --vamtam-accent-color-2, #F69D94 ) !important;
+				border: 0 !important;
+				filter: none !important;
+			}
+
+			padding: 18px 42px 18px 42px !important;
+			border-radius: 50px;
+
+			i {
+				display: none;
+			}
+		}
+
+		#give-advance-button,
+		#give-purchase-button,
+		.give-btn.advance-btn {
+			margin-bottom: 0;
+			+ .sequoia-loader.spinning {
+				bottom: 15px;
+			}
+		}
+		#give-donation-level-button-wrap {
+			> li {
+				text-align: center;
+			}
+
+			.give-donation-level-btn {
+				width: 85px;
+				height: 85px;
+				padding: 0;
+				border: 2px solid var(--vamtam-accent-color-1) !important;
+				border-radius: 50%;
+				box-shadow: none !important;
+				&, .currency {
+					font-size: 18px;
+					font-weight: 600;
+					letter-spacing: 0;
+					line-height: 26px;
+					text-align: center;
+				}
+				.currency {
+					margin: 0 5px 0 0;
+				}
+				background-color: transparent !important;
+				color: var(--vamtam-accent-color-1) !important;
+				&.give-default-level {
+					background-color: var(--vamtam-accent-color-1) !important;
+					color: var(--vamtam-accent-color-5) !important;
+				}
+				&[data-price-id="custom"] {
+					display: none !important;
+				}
+
+			}
+		}
+
+		#give-gateway-radio-list {
+			> li > {
+				input[type=radio] {
+					width: auto !important;
+				}
+
+				label.give-gateway-option {
+					padding-left: 0;
+				}
+			}
+		}
+
+		.payment {
+			#give-payment-mode-select ul > li {
+				border-radius: 30px;
+				max-height: 70px;
+			}
+
+			#give_purchase_form_wrap {
+				border-radius: 30px;
+				padding-left: 10px !important;
+				padding-right: 10px !important;
+				padding-top: 10px;
+				padding-bottom: 0;
+			}
+
+			#give-anonymous-donation-wrap .give-label {
+				display: flex !important;
+				align-items: center;
+				padding: 0;
+				width: 100%;
+				> input[type="checkbox"] {
+					flex-shrink: 12;
+					width: auto !important;
+				}
+
+				> span.give-tooltip {
+					bottom: 8px;
+				}
+			}
+		}
+
+		@media (min-width: 481px) {
+			:is(
+				form.give-form .give-title-prefix-wrap .form-row-title,
+				form[id*=give-form] .give-title-prefix-wrap .form-row-title
+			 ) {
+				width: 20%;
+			}
+			:is(
+				form.give-form .give-title-prefix-wrap .form-row-first,
+				form.give-form .give-title-prefix-wrap .form-row-last,
+				form[id*=give-form] .give-title-prefix-wrap .form-row-first,
+				form[id*=give-form] .give-title-prefix-wrap .form-row-last
+			) {
+				width: 37.5%;
+			}
+		}
+
+	}
+	&.hide-give-notices {
+		#give_error_test_mode,
+		#give_purchase_form_wrap fieldset.no-fields,
+		.give_warning {
+			display: none;
+		}
+	}
+	#give-receipt {
+		max-height: 400px;
+		overflow-y: scroll;
+		.checkmark {
+			display: none !important;
+		}
+		.details .details-table .details-row {
+			align-items: center
+		}
+	}
+	// receipt social btns - theme style.
+	.receipt .social-sharing .social-btn {
+		.standard-button() !important;
+		display: flex !important;
+	}
+	.forms-fields() !important;
+
+	// Dark skin.
+	&.vamtam-givewp-form-dark {
+		.give-form-wrap {
+			.give-btn.advance-btn,
+			.give-btn.give-submit {
+				fill: var( --vamtam-accent-color-6 ) !important;
+				color: var( --vamtam-accent-color-6 ) !important;
+				background-color: var( --vamtam-accent-color-1 ) !important;
+				&:hover {
+					background-color: var( --vamtam-accent-color-6 ) !important;
+					color: var( --vamtam-accent-color-5 ) !important;
+				}
+			}
+			.give-section.introduction {
+				.income-stats {
+					.raised {
+						font-weight: 500;
+					}
+					.goal {
+						font-weight: 400;
+					}
+					.raised, .goal {
+						.number, .text {
+							color: var( --vamtam-accent-color-6 ) !important;
+						}
+					}
+				}
+				.progress-bar .give-progress-bar {
+					box-shadow: none;
+					> span {
+						background-color: var( --vamtam-accent-color-1 ) !important;
+					}
+				}
+			}
+		}
+		// form-fields.
+		form[id*=give-form] .give-donation-amount #give-amount,
+		form[id*=give-form] .give-donation-amount #give-amount-text,
+		.select2.select2-container .select2-selection[role=combobox],
+		input:not([type="button"]):not([type="submit"]),
+		input.give-input,
+		input.give-input.required,
+		form[id*=give-form] .form-row input[type=text],
+		form[id*=give-form] .form-row input[type=text].required,
+		#give-first,
+		#give-last,
+		#give-email,
+		#give-title,
+		select,
+		textarea,
+		form.give-form .form-row textarea {
+			caret-color: var(--vamtam-accent-color-6) !important;
+			color: var( --vamtam-accent-color-6 ) !important;
+			&::placeholder {
+				color: e("color( from var( --vamtam-accent-color-6) srgb r g b / .3 )") !important;
+			}
+			border-color: var( --vamtam-accent-color-6 ) !important;
+			&:active, &:focus {
+				color: var( --vamtam-accent-color-6 ) !important;
+				border-color: e("color( from var( --vamtam-accent-color-6) srgb r g b / .3 )") !important;
+			}
+		}
+		.give-total-wrap {
+			.give-donation-amount.form-row-wide {
+				.give-currency-symbol {
+					color: var( --vamtam-accent-color-6 ) !important;
+				}
+			}
+		}
+
+		form.give-form .form-row textarea {
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			scrollbar-width: none;
+		}
+	}
+	// Alt style.
+	&.vamtam-givewp-form-alt {
+		.give-form-wrap {
+			.give-btn.advance-btn,
+			.give-btn.give-submit {
+				border-radius: 0;
+				fill: var( --vamtam-accent-color-6 ) !important;
+				color: var( --vamtam-accent-color-6 ) !important;
+				background-color: var( --vamtam-accent-color-1 ) !important;
+				&:hover {
+					background-color: var( --vamtam-accent-color-6 ) !important;
+					color: var( --vamtam-accent-color-5 ) !important;
+				}
+			}
+
+			.give-section.introduction {
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				grid-column-gap: 20px;
+				grid-row-gap: 0px;
+				.headline {
+					display: none;
+				}
+				.income-stats {
+					grid-area: 1 / 1 / 2 / 4;
+					margin: 0;
+					.raised {
+						font-weight: 500;
+					}
+					.goal {
+						font-weight: 400;
+					}
+					.raised, .goal {
+						.number, .text {
+							color: var( --vamtam-accent-color-6 ) !important;
+						}
+					}
+				}
+				.progress-bar {
+					grid-area: 2 / 1 / 3 / 4;
+					.give-progress-bar {
+						box-shadow: none;
+						> span {
+							background-color: var( --vamtam-accent-color-1 ) !important;
+						}
+					}
+				}
+				.give-btn.advance-btn {
+					margin: 0;
+					border-radius: 0;
+					grid-area: 1 / 4 / 3 / 6;
+				}
+			}
+
+			.payment .give-submit-button-wrap .sequoia-loader {
+				bottom: 15px;
+			}
+		}
+		// form-fields.
+		form[id*=give-form] .give-donation-amount #give-amount,
+		form[id*=give-form] .give-donation-amount #give-amount-text,
+		.select2.select2-container .select2-selection[role=combobox],
+		input:not([type="button"]):not([type="submit"]),
+		input.give-input,
+		input.give-input.required,
+		form[id*=give-form] .form-row input[type=text],
+		form[id*=give-form] .form-row input[type=text].required,
+		#give-first,
+		#give-last,
+		#give-email,
+		#give-title,
+		select,
+		textarea,
+		form.give-form .form-row textarea {
+			caret-color: var(--vamtam-accent-color-6) !important;
+			color: var( --vamtam-accent-color-6 ) !important;
+			&::placeholder {
+				color: e("color( from var( --vamtam-accent-color-6) srgb r g b / .3 )") !important;
+			}
+			border-color: var( --vamtam-accent-color-6 ) !important;
+			&:active, &:focus {
+				color: var( --vamtam-accent-color-6 ) !important;
+				border-color: e("color( from var( --vamtam-accent-color-6) srgb r g b / .3 )") !important;
+			}
+		}
+		.give-total-wrap {
+			.give-donation-amount.form-row-wide {
+				.give-currency-symbol {
+					color: var( --vamtam-accent-color-6 ) !important;
+				}
+			}
+		}
+		form.give-form .form-row textarea {
+			&::-webkit-scrollbar {
+				display: none;
+			}
+			scrollbar-width: none;
+		}
+	}
+}
+
+.forms-fields() {
+	form[id*=give-form] .give-donation-amount #give-amount,
+	form[id*=give-form] .give-donation-amount #give-amount-text,
+	.select2.select2-container .select2-selection[role=combobox],
+	input:not([type="button"]):not([type="submit"]),
+	input.give-input,
+	input.give-input.required,
+	form[id*=give-form] .form-row input[type=text],
+	form[id*=give-form] .form-row input[type=text].required,
+	#give-first,
+	#give-last,
+	#give-email,
+	#give-title,
+	select,
+	textarea,
+	form.give-form .form-row textarea {
+		.give-standard-input();
+	}
+
+	#give-first,
+	#give-last,
+	#give-email {
+		padding-left: 33px;
+	}
+
+
+	.give-total-wrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.give-donation-amount.form-row-wide {
+			margin: 0;
+			padding: 10px;
+			border: 0;
+			box-shadow: none;
+			.give-currency-symbol {
+				order: 1;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				color: var( --vamtam-accent-color-1 );
+				font-size: x-large;
+				float: unset;
+				height: auto;
+				position: absolute;
+				left: 20px;
+			}
+			.give-text-input {
+				order: 0;
+				float: unset;
+				min-width: unset;
+				font-size: x-large;
+				background-clip: unset;
+			}
+		}
+	}
+}
+
+// tablet
+@media only screen and (max-device-width: 1024px) {
+	.give-form-templates {
+		&.vamtam-givewp-form-alt {
+			.give-form-wrap {
+				max-width: 100%;
+				.give-section.introduction {
+					display: flex;
+					flex-direction: column;
+
+					> .give-btn.advance-btn {
+						width: 100%;
+						max-width: 100% !important;
+					}
+				}
+			}
+		}
+	}
+}
+

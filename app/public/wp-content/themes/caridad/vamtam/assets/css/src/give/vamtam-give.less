@@ -1,0 +1,697 @@
+@import (reference) '../../buttons.less';
+@import (reference) '../mixins.less';
+
+// Caridad-only.
+// <--- Give WP Donations ---> //
+#give-recurring-form .form-row input[type=email],
+#give-recurring-form .form-row input[type=password],
+#give-recurring-form .form-row input[type=tel],
+#give-recurring-form .form-row input[type=text],
+#give-recurring-form .form-row input[type=url],
+#give-recurring-form .form-row select,
+#give-recurring-form .form-row textarea,
+form[id*=give-form] .give-donation-amount #give-amount,
+form[id*=give-form] .give-donation-amount #give-amount-text,
+form.give-form .form-row input[type=email],
+form.give-form .form-row input[type=password],
+form.give-form .form-row input[type=tel],
+form.give-form .form-row input[type=text],
+form.give-form .form-row input[type=url],
+form.give-form .form-row select,
+form.give-form .form-row textarea,
+form[id*=give-form] .form-row input[type=email],
+form[id*=give-form] .form-row input[type=password],
+form[id*=give-form] .form-row input[type=tel],
+form[id*=give-form] .form-row input[type=text],
+form[id*=give-form] .form-row input[type=url],
+form[id*=give-form] .form-row select,
+form[id*=give-form] select.give-select-level,
+form[id*=give-form] .form-row textarea {
+	.give-standard-input();
+}
+.give-modal form.give-form {
+	&.give-form-type-multi{
+		padding: 30px !important;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		// Title.
+		.give-form-title {
+			margin-top: 80px;
+			margin-bottom: 60px;
+			&:extend(.vamtam-font-h2);
+			font-size: 50px;
+			font-weight: bold;
+			letter-spacing: 0;
+			line-height: 60px;
+		}
+		// Top amount.
+		.give-donation-amount {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			.give-currency-symbol {
+				position: absolute;
+				left: 10px;
+				z-index: 1;
+				float: unset;
+				background-color: transparent;
+				border: 0;
+				color: var( --vamtam-accent-color-1 );
+				padding: 0;
+			}
+			.give-text-input {
+				max-width: 200px;
+				text-align: center;
+			}
+		}
+		// Select.
+		.give-select.give-select-level {
+			margin-bottom: 50px !important;
+			appearance:none;
+			background: var(--vamtam-default-bg-color) url(data:image/svg+xml,%3Csvg%20aria-hidden%3D%22true%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20512%22%3E%3Cpath%20fill%3D%22%23052F5C%22%20d%3D%22M31.3%20192h257.3c17.8%200%2026.7%2021.5%2014.1%2034.1L174.1%20354.8c-7.8%207.8-20.5%207.8-28.3%200L17.2%20226.1C4.6%20213.5%2013.5%20192%2031.3%20192z%22%2F%3E%3C%2Fsvg%3E) no-repeat right 20px top 50%/12px!important
+		}
+		// Info.
+		#give_checkout_user_info {
+			#give_purchase_form_wrap {
+				width: 100%;
+			}
+			legend {
+				text-align: center;
+				border: 0;
+				margin: 0;
+				margin-bottom: 50px;
+				&:extend(.vamtam-font-h3);
+				font-size: 24px;
+				font-weight: bold;
+				letter-spacing: 0;
+				line-height: 32px;
+			}
+			label.give-label {
+				padding-left: 20px;
+			}
+		}
+		// Submit.
+		#give_purchase_submit {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			// Total.
+			#give-final-total-wrap {
+				margin: 35px 0;
+				.give-donation-total-label,
+				.give-final-total-amount {
+					background: none;
+					border: 0;
+					&:extend(.vamtam-font-h3);
+					font-size: 24px;
+					font-weight: bold;
+					letter-spacing: 0;
+					line-height: 32px;
+					color: var(--vamtam-accent-color-1);
+				}
+			}
+			// Submit wrap.
+			.give-submit-button-wrap {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		// Close btn.
+		button.mfp-close {
+			padding: 0;
+			margin: 30px 30px 0 0;
+			display: flex !important;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			background: transparent !important;
+			opacity: 1;
+			font-size: 0;
+			&::before {
+				font-size: 30px;
+				font-weight: 100;
+				color: var(--vamtam-accent-color-1);
+				font-family: 'vamtam-theme' !important;
+				content: icon('vamtam-theme-close-sample') !important;
+				color: var( --vamtam-accent-color-1, #052F5C );
+			}
+		}
+	}
+}
+.give-form-wrap.give-display-modal {
+	form.give-form,
+	form[id*=give-form] {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.give_error,
+	.give_warning {
+		margin: 0 20px 20px 20px;
+	}
+	.give-total-wrap,
+	form > .give-donation-amount {
+		order: 2;
+	}
+	.give-donation-amount {
+		margin: 10px 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		.give-text-input,
+		.give-currency-symbol {
+			font-size: 18px !important;
+			font-weight: 600 !important;
+			letter-spacing: 0 !important;
+			line-height: 26px !important;
+		}
+		.give-currency-symbol {
+			position: absolute;
+			height: auto;
+			left: 25px;
+			z-index: 1;
+			float: unset;
+			background-color: transparent;
+			border: 0 !important;
+			color: var( --vamtam-accent-color-1 );
+			padding: 0;
+		}
+		.give-text-input {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			border-radius: 42.5px !important;
+			min-height: 85px !important;
+			max-height: 85px !important;
+			max-width: 200px !important;
+			min-width: 200px !important;
+			text-align: center;
+			background: transparent !important;
+			color: var( --vamtam-accent-color-1 ) !important;
+			border-color: var( --vamtam-accent-color-1 ) !important;
+			padding-left: 40px !important;
+		}
+	}
+	#give-donation-level-button-wrap {
+		display: flex !important;
+		flex-wrap: wrap;
+		margin: 0;
+		order: 1;
+		> li {
+			text-align: center;
+			margin: 0;
+		}
+		.give-donation-level-btn {
+			margin: 10px 20px;
+			width: 85px;
+			height: 85px;
+			padding: 0;
+			border: 2px solid var(--vamtam-accent-color-1);
+			border-radius: 50%;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 0;
+			line-height: 26px;
+			text-align: center;
+			background-color: transparent !important;
+			color: var(--vamtam-accent-color-1) !important;
+			&.give-default-level {
+				background-color: var(--vamtam-accent-color-1) !important;
+				color: var(--vamtam-accent-color-5) !important;
+			}
+			&[data-price-id="custom"] {
+				display: none;
+			}
+		}
+	}
+	form.give-form > .give-btn.give-btn-modal,
+	form.give-form > .give-btn {
+		margin: 10px 20px;
+		order: 3;
+		border: 2px solid var( --vamtam-accent-color-1 );
+		&:hover {
+			background-color: transparent;
+			color: var( --vamtam-accent-color-1 );
+		}
+	}
+}
+.vamtam-givewp-form-light {
+	.give-form-wrap.give-display-modal {
+		.give-donation-amount {
+			.give-currency-symbol {
+				color: var( --vamtam-accent-color-3 );
+			}
+			.give-text-input {
+				background: transparent !important;
+				color: var( --vamtam-accent-color-3 ) !important;
+				border-color: var( --vamtam-accent-color-3 ) !important;
+			}
+		}
+		#give-donation-level-button-wrap {
+			.give-donation-level-btn {
+				border: 2px solid var(--vamtam-accent-color-3);
+				background-color: transparent !important;
+				color: var(--vamtam-accent-color-3) !important;
+				&.give-default-level {
+					background-color: var(--vamtam-accent-color-3) !important;
+					color: var(--vamtam-accent-color-1) !important;
+				}
+			}
+		}
+		form.give-form > .give-btn.give-btn-modal,
+		form.give-form > .give-btn {
+			border: 2px solid var( --vamtam-accent-color-3 );
+			&:hover {
+				background-color: var( --vamtam-accent-color-3 );
+				color: var( --vamtam-accent-color-1 );
+			}
+		}
+		form.give-form {
+			input, textarea {
+				caret-color: var( --vamtam-accent-color-3 ) !important;
+			}
+		}
+	}
+}
+.vamtam-givewp-form-dark { // added to body (page + iframes) programmatically (check theme-elementor.js handleDarkFormSkinForPage() function ).
+	.give-form-wrap.give-display-modal {
+		.give-donation-amount {
+			.give-currency-symbol {
+				color: var( --vamtam-accent-color-3 );
+			}
+			.give-text-input {
+				background: transparent !important;
+				color: var( --vamtam-accent-color-3 ) !important;
+				border-color: var( --vamtam-accent-color-6 ) !important;
+			}
+		}
+		#give-donation-level-button-wrap {
+			.give-donation-level-btn {
+				border: 2px solid var(--vamtam-accent-color-6);
+				background-color: transparent !important;
+				color: var(--vamtam-accent-color-6) !important;
+				&.give-default-level {
+					background-color: var(--vamtam-accent-color-6) !important;
+					color: var(--vamtam-accent-color-3) !important;
+				}
+			}
+		}
+		form.give-form > .give-btn.give-btn-modal,
+		form.give-form > .give-btn {
+			border: 2px solid var( --vamtam-accent-color-1 );
+			color: var( --vamtam-accent-color-6 ) !important;
+			&:hover {
+				border-color: var( --vamtam-accent-color-6 );
+				background-color: var( --vamtam-accent-color-6 ) !important;
+				color: var( --vamtam-accent-color-3 ) !important;
+			}
+		}
+		form.give-form {
+			input, textarea {
+				caret-color: var( --vamtam-accent-color-6 ) !important;
+			}
+			.give-donation-amount {
+				.give-text-input,
+				.give-currency-symbol {
+					color: var( --vamtam-accent-color-6 ) !important;
+				}
+			}
+		}
+	}
+	#give-recurring-form .form-row input[type=email],
+	#give-recurring-form .form-row input[type=password],
+	#give-recurring-form .form-row input[type=tel],
+	#give-recurring-form .form-row input[type=text],
+	#give-recurring-form .form-row input[type=url],
+	#give-recurring-form .form-row select,
+	#give-recurring-form .form-row textarea,
+	form[id*=give-form] .give-donation-amount #give-amount,
+	form[id*=give-form] .give-donation-amount #give-amount-text,
+	form.give-form .form-row input[type=email],
+	form.give-form .form-row input[type=password],
+	form.give-form .form-row input[type=tel],
+	form.give-form .form-row input[type=text],
+	form.give-form .form-row input[type=url],
+	form.give-form .form-row select,
+	form.give-form .form-row textarea,
+	form[id*=give-form] .form-row input[type=email],
+	form[id*=give-form] .form-row input[type=password],
+	form[id*=give-form] .form-row input[type=tel],
+	form[id*=give-form] .form-row input[type=text],
+	form[id*=give-form] .form-row input[type=url],
+	form[id*=give-form] .form-row select,
+	form[id*=give-form] select.give-select-level,
+	form[id*=give-form] .form-row textarea {
+		caret-color: var(--vamtam-accent-color-6);
+		color: var( --vamtam-accent-color-6 );
+		&::placeholder {
+			color: e("color( from var( --vamtam-accent-color-6) srgb r g b / .3 )");
+		}
+		border-color: var( --vamtam-accent-color-6 );
+		&:active, &:focus {
+			color: var( --vamtam-accent-color-6 );
+			border-color: e("color( from var( --vamtam-accent-color-6) srgb r g b / .3 )");
+		}
+	}
+	.give-modal form.give-form {
+		&.give-form-type-multi{
+			// Top amount.
+			.give-donation-amount {
+				.give-currency-symbol {
+					color: var( --vamtam-accent-color-6 );
+				}
+			}
+			// Submit.
+			#give_purchase_submit {
+				// Total.
+				#give-final-total-wrap {
+					.give-donation-total-label,
+					.give-final-total-amount {
+						color: var(--vamtam-accent-color-6);
+					}
+				}
+			}
+			// Close btn.
+			button.mfp-close {
+				&::before {
+					color: var(--vamtam-accent-color-6);
+				}
+			}
+		}
+	}
+}
+body.hide-give-notices {
+	#give_error_test_mode {
+		display: none;
+	}
+}
+html {
+	.give-embed-form-wrapper {
+		.iframe-loader {
+			opacity: 0 !important;
+		}
+	}
+	&:not(.safari) {
+		// This anim is causing a bug on safari where the forms stay hidden.
+		.give-embed-form-wrapper {
+			iframe {
+				transition: all .3s ease; // This is for jerky iframe resizing when switching between steps (multistep-forms).
+				opacity: 0;
+				@keyframes vamtam-iframe-fadeIn {
+					from { opacity: 0; visibility: hidden;}
+					to { opacity: 1;visibility: visible;}
+				}
+				&[data-contentloaded="1"] {
+					animation: vamtam-iframe-fadeIn 2s ease forwards;
+				}
+			}
+		}
+	}
+}
+.give-btn {
+	border: 0;
+}
+.elementor-widget-GiveWP,
+.elementor-widget-Give {
+
+	.give-goal-progress {
+		.raised {
+			display: flex;
+			align-items: center;
+			font-size: 0;
+			margin: 10px 0;
+			> * {
+				order: 0;
+			}
+			.income {
+				order: 1;
+				justify-self: flex-start;
+				&::before {
+					content: 'Raised:';
+					margin-right: 5px;
+				}
+				color: var(--vamtam-accent-color-2);
+			}
+			.goal-text {
+				order: 100;
+				justify-self: flex-end;
+				margin-left: auto;
+				&::before {
+					content: 'Goal:';
+					margin-right: 5px;
+				}
+				color: #7A8897;
+			}
+			.income, .goal-text {
+				&:extend(.vamtam-font-primary-font);
+				letter-spacing: 0 !important;
+				line-height: 30px !important;
+			}
+		}
+		.give-progress-bar {
+			margin: 10px 0;
+			height: 8px;
+			background-color: var(--vamtam-accent-color-8);
+			> span {
+				height: 8px;
+				background-color: var(--vamtam-accent-color-2);
+				background: var(--vamtam-accent-color-2);
+				background-blend-mode: normal;
+			}
+		}
+	}
+
+	.give-card {
+		&, &:hover {
+			border: 0 !important;
+			box-shadow: none !important;
+			color: var(--vamtam-accent-color-1) !important;
+		}
+		.give-card__body {
+			padding: 0;
+		}
+		.give-card__title {
+			margin: 20px 0 10px 0;
+		}
+		.give-card__text {
+			margin: 10px 0;
+			text-align: start;
+			font-size: 16px;
+			letter-spacing: 0;
+			line-height: 30px;
+		}
+		.give-goal-progress {
+			.raised {
+				.income, .goal-text {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.give-donor {
+		.give-donor__image {
+			border: 2px solid var(--vamtam-accent-color-1);
+		}
+		.give-donor__name {
+			&:extend(.vamtam-font-h3);
+			color: var(--vamtam-accent-color-1) !important;
+		}
+		.give-donor__total,
+		.give-donor__timestamp {
+			&:extend(.vamtam-font-primary-font);
+			color: var(--vamtam-accent-color-1) !important;
+		}
+	}
+}
+.give-form {
+	.receipt .checkmark {
+		display: none !important;
+	}
+
+	#give-gateway-radio-list > li > input {
+		vertical-align: middle;
+	}
+
+	.give-submit-button-wrap {
+		position: relative;
+		span.give-loading-animation {
+			position: absolute;
+			right: -25px;
+		}
+	}
+
+	@media (min-width: 481px) {
+		:is(
+			form.give-form .give-title-prefix-wrap .form-row-title,
+			form[id*=give-form] .give-title-prefix-wrap .form-row-title
+		) {
+			width: 18%;
+		}
+		:is(
+			form.give-form .give-title-prefix-wrap .form-row-first,
+			form[id*=give-form] .give-title-prefix-wrap .form-row-first,
+			form.give-form .give-title-prefix-wrap .form-row-last,
+			form[id*=give-form] .give-title-prefix-wrap .form-row-last
+		) {
+			width: 38.5%;
+		}
+	}
+}
+// mobile
+@media (max-width: 767px) {
+	.give-form-wrap.give-display-modal {
+		form[id*=give-form] {
+			flex-direction: column;
+			justify-content: center;
+			#give-donation-level-button-wrap {
+				width: 100%;
+
+				> li {
+					width: 50%;
+				}
+				.give-btn.give-donation-level-btn {
+					margin: 10px 0;
+				}
+			}
+			.give-donation-amount,
+			.give-btn.give-btn-modal {
+				margin: 20px 0;
+			}
+		}
+	}
+	// Donor dashboard.
+	#give-donor-dashboard {
+		.give-donor-dashboard__add-primary-address {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+//tablet
+@media (max-width: 1024px) {
+	.give-form-wrap.give-display-modal {
+		form[id*=give-form] {
+			justify-content: center;
+			#give-donation-level-button-wrap {
+				width: 100%;
+				justify-content: center;
+				.give-btn.give-donation-level-btn {
+					margin: 20px;
+				}
+			}
+			.give-donation-amount,
+			.give-btn.give-btn-modal {
+				margin: 20px;
+			}
+		}
+	}
+}
+
+// Donor dashboard.
+#give-donor-dashboard {
+	--give-donor-dashboard-accent-color: var(--vamtam-accent-color-1);
+	.give-donor-dashboard-dashboard__stat .give-donor-dashboard-dashboard__figure {
+		color: var(--vamtam-accent-color-1) !important;
+	}
+	.give-donor-dashboard-text-control__input {
+		.give-standard-input() !important;
+	}
+
+	.give-donor-dashboard-select-control {
+		> div > div {
+			box-shadow: none;
+			border-width: 2px;
+			border-color: var(--vamtam-accent-color-1);
+			border-radius: 30px;
+			margin: 0;
+			> div {
+				max-height: 55px;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+		input {
+			border: 0 !important;
+			padding-top: 0 !important;
+		}
+	}
+
+	.give-donor-dashboard__auth-modal-content {
+		padding-bottom: 0;
+	}
+
+	.give-donor-dashboard__auth-modal-heading {
+		background-color: var(--vamtam-accent-color-1);
+		padding-top: 28px;
+		padding-bottom: 28px;
+		color: var(--vamtam-h1-color);
+	}
+
+	.give-donor-dashboard-button {
+		font-family: var( --vamtam-give-body-font-family );
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: none;
+		font-style: normal;
+		text-decoration: none;
+		line-height: 1.56em;
+		letter-spacing: 0px;
+		color: var( --vamtam-accent-color-6 ) !important;
+		background-color: var( --vamtam-accent-color-1 );
+		border-radius: 30px;
+		padding: 18px 55px 18px 55px;
+		opacity: 1;
+		box-shadow: none;
+		border: 0;
+		filter: none;
+		&:hover {
+			background-color: var( --vamtam-accent-color-6 );
+			color: var( --vamtam-accent-color-5 ) !important;
+			border: 0;
+			filter: none;
+		}
+	}
+
+	.give-donor-dashboard-text-control__input input {
+		border: 0 !important;
+	}
+
+	input {
+		color: var(--vamtam-accent-color-6) !important;
+		caret-color: var(--vamtam-accent-color-6) !important;
+
+	}
+
+	svg {
+		color: currentColor;
+	}
+
+	.give-donor-dashboard__auth-modal-seperator {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+
+	@media (max-device-width: 919px) { // max-width is the size of the iframe.
+		.give-donor-dashboard__add-primary-address {
+			.give-donor-dashboard-heading {
+				text-align: center;
+			}
+		}
+	}
+}
+
+// Loader icon.
+iframe[name="give-embed-donor-profile"] + .iframe-loader > div > div {
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg enable-background='new 0 0 349 348' version='1.1' viewBox='0 0 349 348' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle type='text/css'%3E%3C/style%3E%3Cpath class='st0' d='m25.1 204.57c-13.38 0-24.47-10.6-24.97-24.08-0.09-2.4-0.13-4.52-0.13-6.49 0-96.22 78.28-174.5 174.5-174.5 13.81 0 25 11.19 25 25s-11.19 25-25 25c-68.65 0-124.5 55.85-124.5 124.5 0 1.37 0.03 2.85 0.1 4.65 0.51 13.8-10.27 25.39-24.07 25.9-0.31 0.01-0.62 0.02-0.93 0.02z'/%3E%3Cpath class='st0' d='m174.5 348.5c-13.81 0-25-11.19-25-25s11.19-25 25-25c68.65 0 124.5-55.85 124.5-124.5 0-1.38-0.03-2.85-0.1-4.65-0.51-13.8 10.26-25.4 24.06-25.91 13.83-0.53 25.4 10.26 25.91 24.06 0.09 2.39 0.13 4.51 0.13 6.49 0 96.23-78.28 174.51-174.5 174.51z'/%3E%3C/svg%3E%0A") !important;
+}
+// <--- Give WP Donations ---> //
+
