@@ -14,8 +14,11 @@ on:
   schedule:
     # Fallback: run every 30 minutes
     - cron: '*/30 * * * *'
-  # Also allow manual trigger
+  # Manual trigger from GitHub UI
   workflow_dispatch:
+  # Webhook trigger from WordPress
+  repository_dispatch:
+    types: [wordpress-post-published]
 
 jobs:
   deploy:
