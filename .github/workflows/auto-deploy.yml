@@ -1,12 +1,18 @@
 # Auto-deploy workflow for GitHub Actions
-# Run this every 30 minutes to keep Next.js site in sync with WordPress
-# When a post is published in WordPress, the snapshot will be updated within 30 minutes
+# Triggers on: git push to main, or manual trigger, or 30-minute schedule
+# Deploys Next.js frontend to HostGator automatically
 
 name: Auto-deploy Next.js site
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/auto-deploy.yml'
   schedule:
-    # Run every 30 minutes
+    # Fallback: run every 30 minutes
     - cron: '*/30 * * * *'
   # Also allow manual trigger
   workflow_dispatch:
@@ -26,6 +32,7 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
+        working-directory: ./frontend
         run: npm install
 
       - name: Setup SSH key
@@ -56,14 +63,21 @@ jobs:
           # which uses loadSnapshot() to read the file at build time
 
       - name: Build Next.js
+        working-directory: ./frontend
         run: npm run build
 
       - name: Deploy to HostGator
+        working-directory: ./frontend
         run: |
-          # Deploy the built static files to HostGator
-          # Using rsync over SSH
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/id_ed25519_hostgator -o StrictHostKeyChecking=no" \
+          # Deploy the built static files to HostGator via SSH
+          ssh -i ~/.ssh/id_ed25519_hostgator -o StrictHostKeyChecking=no \
+            zank@gator3223.hostgator.com \
+            "cd /home4/zank/evangelisteahongankomlavi.com && \
+             find . -maxdepth 1 -type f ! -name '.htaccess' -delete && \
+             find . -maxdepth 1 -type d ! -name '.' ! -name '.*' -exec rm -rf {} + 2>/dev/null || true"
+
+          # Upload new files
+          rsync -avz --delete -e "ssh -i ~/.ssh/id_ed25519_hostgator -o StrictHostKeyChecking=no" \
             out/ zank@gator3223.hostgator.com:/home4/zank/evangelisteahongankomlavi.com/
 
       - name: Verify deployment
