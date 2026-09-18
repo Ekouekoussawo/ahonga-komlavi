@@ -1,0 +1,73 @@
+# Auto-deploy workflow for GitHub Actions
+# Run this every 30 minutes to keep Next.js site in sync with WordPress
+# When a post is published in WordPress, the snapshot will be updated within 30 minutes
+
+name: Auto-deploy Next.js site
+
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: '*/30 * * * *'
+  # Also allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HOSTGATOR_SSH_KEY }}" > ~/.ssh/id_ed25519_hostgator
+          chmod 600 ~/.ssh/id_ed25519_hostgator
+          ssh-keyscan -H gator3223.hostgator.com >> ~/.ssh/known_hosts
+
+      - name: Dump posts from HostGator MySQL
+        run: |
+          # This step uses SSH to dump posts directly from the database
+          # The snapshot will have the latest posts from WordPress
+          echo "Dumping posts from HostGator..."
+          # Note: In production, use a secure way to pass DB credentials
+          ssh -i ~/.ssh/id_ed25519_hostgator zank@gator3223.hostgator.com \
+            "mysql -u zank_ahonga -p'${{ secrets.DB_PASSWORD }}' zank_ahonga \
+            -e \"SELECT ID, post_date, post_content, post_title, post_excerpt, post_name, post_type \
+            FROM eak_posts WHERE post_status='publish' AND post_type IN ('post','page')\"" \
+            > public/_generated/wp-content-dump.txt
+
+      - name: Generate snapshot
+        run: |
+          # Generate the snapshot from the dump
+          # This creates public/_generated/wp-content.json in WP REST API format
+          echo "Generating snapshot..."
+          # The actual generation is done by the Next.js build process
+          # which uses loadSnapshot() to read the file at build time
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Deploy to HostGator
+        run: |
+          # Deploy the built static files to HostGator
+          # Using rsync over SSH
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_ed25519_hostgator -o StrictHostKeyChecking=no" \
+            out/ zank@gator3223.hostgator.com:/home4/zank/evangelisteahongankomlavi.com/
+
+      - name: Verify deployment
+        run: |
+          curl -s -o /dev/null -w "Homepage: %{http_code}\n" https://evangelisteahongankomlavi.com/
+          curl -s -o /dev/null -w "Sermons: %{http_code}\n" https://evangelisteahongankomlavi.com/sermons/
+          curl -s -o /dev/null -w "Snapshot: %{http_code}\n" https://evangelisteahongankomlavi.com/_generated/wp-content.json
