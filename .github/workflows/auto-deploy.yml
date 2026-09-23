@@ -30,7 +30,7 @@ jobs:
       HG_REMOTE_PATH: /home4/zank/evangelisteahongankomlavi.com
       HG_MYSQL_USER: zank_ahonga
       HG_MYSQL_DB: zank_ahonga
-      HG_TABLE_PREFIX: wp_
+      HG_TABLE_PREFIX: eak_
 
     steps:
       - name: Checkout code

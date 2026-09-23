@@ -24,8 +24,8 @@ def extract_postmeta(sql):
     """Extract WordPress postmeta for featured images and URLs."""
     postmeta_map = {}
 
-    # Find all wp_postmeta rows
-    postmeta_inserts = re.findall(r"INSERT INTO `wp_postmeta` VALUES (.*?);", sql, re.DOTALL)
+    # Find all {prefix}_postmeta rows (supports wp_, eak_, or any prefix)
+    postmeta_inserts = re.findall(r"INSERT INTO `[^`]+postmeta` VALUES (.*?);", sql, re.DOTALL)
 
     for insert in postmeta_inserts:
         rows = split_sql_rows(insert)
@@ -85,7 +85,8 @@ def main():
     postmeta_map = extract_postmeta(sql)
     print(f"Extracted postmeta: {len(postmeta_map)} entries")
 
-    posts_inserts = re.findall(r"INSERT INTO `wp_posts` VALUES (.*?);", sql, re.DOTALL)
+    # Find all {prefix}_posts rows (supports wp_, eak_, or any prefix)
+    posts_inserts = re.findall(r"INSERT INTO `[^`]+posts` VALUES (.*?);", sql, re.DOTALL)
     print(f"Found {len(posts_inserts)} wp_posts INSERT blocks")
 
     all_posts = []
@@ -226,12 +227,12 @@ def split_sql_rows(insert_str):
 
 def extract_from_sql_with_fallback(sql):
     """Try WP-CLI export format first, then standard MySQL INSERT format"""
-    # Try to find wp_posts table data in WP-CLI format (which has different structure)
-    # For now, just try standard INSERT INTO pattern
-    posts_inserts = re.findall(r"INSERT INTO `wp_posts` VALUES (.*?);", sql, re.DOTALL)
+    # Try to find {prefix}_posts table data in WP-CLI format (which has different structure)
+    # Supports wp_, eak_, or any prefix (matches `prefix_posts` pattern)
+    posts_inserts = re.findall(r"INSERT INTO `[^`]+posts` VALUES (.*?);", sql, re.DOTALL)
     if not posts_inserts:
         # Try alternative format without backticks
-        posts_inserts = re.findall(r"INSERT INTO wp_posts VALUES (.*?);", sql, re.DOTALL)
+        posts_inserts = re.findall(r"INSERT INTO (?:\w+\.)?posts VALUES (.*?);", sql, re.DOTALL)
     return posts_inserts
 
 
