@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "set NODE_ENV=development&& next dev",
+    "prebuild": "node scripts/snapshot-wp-content.mjs",
+    "build": "next build && node scripts/flatten-rsc-payloads.mjs",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "fuse.js": "^7.0.0",
+    "lucide-react": "^0.468.0",
+    "next": "16.3.4",
+    "next-intl": "^4.0.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-hook-form": "^7.54.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5"
+  }
+}

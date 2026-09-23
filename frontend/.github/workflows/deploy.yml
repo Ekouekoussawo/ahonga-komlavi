@@ -1,0 +1,74 @@
+name: Build and deploy to HostGator
+
+# Runs the Next.js static export and uploads it to
+# evangelisteahongankomlavi.com via FTP — no local machine needed.
+#
+# Triggers:
+#   - workflow_dispatch: manual "Run workflow" button in the Actions tab,
+#     or `gh workflow run deploy.yml` from any machine.
+#   - repository_dispatch (type: wp-post-published): fired by the
+#     WordPress mu-plugin whenever a post is published/updated, so new
+#     content goes live automatically. See
+#     plans/evangelisteahongankomlavi-auto-rebuild-pipeline-plan.md for the
+#     WordPress-side half of this.
+#   - push to main: so code/content fixes deploy the same way, without a
+#     separate manual step.
+on:
+  workflow_dispatch: {}
+  repository_dispatch:
+    types: [wp-post-published]
+  push:
+    branches: [main]
+
+# If WordPress fires several publishes/edits close together (bulk edits,
+# a flurry of posts), only the most recent triggered run actually finishes
+# — in-flight older ones are cancelled rather than queuing up N redundant
+# full builds. A plain push to main is a separate concern (code changes),
+# left out of this group so it never gets cancelled by content publishes.
+concurrency:
+  group: ${{ github.event_name == 'push' && format('deploy-push-{0}', github.sha) || 'deploy-content' }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          # No `cache: "npm"` — that option requires a committed lockfile,
+          # and this repo deliberately has none (see below).
+
+      - name: Install dependencies
+        # No committed package-lock.json, by design. A lockfile generated on
+        # Windows omits optional deps that fail its own os/cpu check, so
+        # @parcel/watcher's linux-x64-glibc binary was never recorded and
+        # never fetched on the Linux runner — `npm ci` and `npm install`
+        # both failed identically until the lockfile was removed
+        # (confirmed 2026-09-14). If reproducible installs become important
+        # later, generate the lockfile on Linux (CI or a container), not on
+        # a dev Windows box.
+        run: npm install
+
+      - name: Build static export
+        env:
+          NEXT_PUBLIC_SITE_URL: https://evangelisteahongankomlavi.com
+          NEXT_PUBLIC_WP_API: https://evangelisteahongankomlavi.com/wp/wp-json/wp/v2
+        run: npm run build
+
+      - name: Deploy to HostGator via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /evangelisteahongankomlavi.com/
+          # Left at false deliberately: this only uploads new/changed
+          # files, it never deletes anything remotely. A fully unattended
+          # pipeline should not be able to wipe the live site if a build
+          # ever produces an unexpectedly small `out/` — a stray leftover
+          # file is a much smaller problem than an accidental mass delete.
+          dangerous-clean-slate: false

@@ -1,0 +1,133 @@
+{
+  "site": {
+    "title": "Évangéliste Ahongan Komlavi",
+    "description": "Site de l'évangéliste Ahongan Komlavi - Ministère Évangélique"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "ministry": "Ministère",
+    "sermons": "Prêches",
+    "events": "Événements",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Porteur de l'Évangile",
+    "subtitle": "Ministère, enseignement et accompagnement spirituel",
+    "cta": "Découvrir le ministère"
+  },
+  "discover": {
+    "title": "Découvrir",
+    "subtitle": "Explorez les piliers du ministère"
+  },
+  "sermons": {
+    "title": "Prêche & Ressources",
+    "badge": "Ressources",
+    "subtitle": "Messages, méditations et inspirations pour grandir dans la foi",
+    "empty": "Aucun prêche disponible",
+    "emptyDesc": "Revenez bientôt pour découvrir de nouveaux messages et ressources spirituelles.",
+    "cta": "Explorer les archives",
+    "readMore": "Lire la suite →",
+    "viewAll": "Voir tous les prêches",
+    "filterSeries": "Série",
+    "filterAll": "Toutes",
+    "filterDate": "Date",
+    "filterNewest": "Plus récents",
+    "filterOldest": "Plus anciens"
+  },
+  "events": {
+    "title": "Événements à venir",
+    "badge": "Calendrier",
+    "subtitle": "Participez à nos rencontres et célébrations",
+    "empty": "Aucun événement à venir",
+    "emptyDesc": "Consultez nos prochains rassemblements, programmes et moments de communion.",
+    "cta": "Voir le calendrier"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "formTitle": "Envoyez un message",
+    "name": "Nom complet",
+    "emailField": "Email",
+    "subject": "Sujet de prière",
+    "selectPlaceholder": "Sélectionnez un sujet",
+    "phoneField": "Téléphone",
+    "message": "Message",
+    "submit": "Envoyer le message",
+    "success": "Merci ! Votre message a bien été pris en compte."
+  },
+  "cta": {
+    "badge": "Soutenir le ministère",
+    "title": "Faites un don",
+    "subtitle": "Vos dons permettent de poursuivre l'évangélisation et les activités de l'église. Contribuez à l'œuvre de Dieu.",
+    "button": "Soutenir maintenant"
+  },
+  "footer": {
+    "newsletterTitle": "Restez connecté",
+    "newsletterSubtitle": "Recevez nos actualités, événements et inspirations par email.",
+    "newsletterPlaceholder": "Entrez votre adresse email",
+    "newsletterSubmit": "S'inscrire",
+    "newsletterSuccess": "Abonné !",
+    "newsletterSuccessDesc": "Merci pour votre inscription ! Nous vous contacterons bientôt.",
+    "brandDescription": "Un serviteur appelé à conduire les âmes dans la présence de Dieu. Ministère basé à Lomé, Togo.",
+    "contactTitle": "Contactez-nous",
+    "followTitle": "Suivez-nous",
+    "rights": "Tous droits réservés.",
+    "social": {
+      "youtube": "YouTube",
+      "whatsapp": "WhatsApp",
+      "tiktok": "TikTok",
+      "facebook": "Facebook"
+    },
+    "nav": {
+      "home": "Accueil",
+      "about": "À propos",
+      "ministry": "Ministère",
+      "sermons": "Prêches",
+      "contact": "Contact"
+    }
+  },
+  "qa": {
+    "title": "Questions fréquentes",
+    "subtitle": "Réponses aux questions courantes sur le ministère",
+    "searchPlaceholder": "Rechercher une question...",
+    "noResults": "Aucune question trouvée",
+    "categories": {
+      "general": "Général",
+      "services": "Cultes",
+      "prayer": "Prière",
+      "giving": "Offrandes",
+      "salvation": "Salut"
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Découvrez l'histoire et la mission de l'Évangéliste Ahongan Komlavi",
+    "lead": "Un serviteur appelé à conduire les âmes dans la présence de Dieu",
+    "p1": "L'Évangéliste AHONGAN KOMLAVI est un serviteur de Dieu animé par le désir de voir les vies transformées par la puissance de Jésus-Christ. Son engagement dans le ministère est profondément marqué par la prière, la Parole de Dieu, l'évangélisation et la restauration des vies.",
+    "p2": "Il est le responsable du Centre de prière ESPRIT ET VIE, situé à Djagblé-Abolavé, Quartier des Vainqueurs.",
+    "p3": "À travers son ministère, son désir est d'être un instrument entre les mains de Dieu pour encourager ceux qui traversent des moments difficiles, relever ceux qui sont découragés, fortifier ceux qui ont perdu espoir et conduire les âmes à une véritable rencontre avec Jésus-Christ. Il croit fermement qu'aucune situation n'est trop difficile pour Dieu et qu'une vie consacrée à la prière peut devenir un instrument puissant entre les mains du Seigneur. C'est pourquoi il accorde une place particulière aux temps de prière, de jeûne, d'intercession, d'enseignement biblique et d'évangélisation.",
+    "contactTitle": "Contactez-nous",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email"
+  },
+  "ministry": {
+    "title": "Ministère",
+    "subtitle": "Une mission fondée sur la prière, la parole et la transformation des vies",
+    "visionP1": "Le ministère ESPRIT ET VIE est un appel à revenir à l'essentiel : la prière, l'enseignement de la Parole et la puissance du Saint-Esprit dans la vie quotidienne.",
+    "visionP2": "Notre mission est de conduire les âmes dans la présence de Dieu, de former des disciples et de répandre l'évangile à Lomé, au Togo et au-delà.",
+    "visionP3": "Nous croyons que chaque personne peut expérimenter une transformation réelle par Jésus-Christ, quel que soit son passé.",
+    "valuesTitle": "Nos valeurs",
+    "prayer": "Prière",
+    "prayerDesc": "Nous croyons en la puissance de la prière et de l'intercession.",
+    "word": "Parole",
+    "wordDesc": "Nous enseignons une Bible fidèle et applicable.",
+    "love": "Amour",
+    "loveDesc": "Nous accueillons tous avec grâce et respect.",
+    "service": "Service",
+    "serviceDesc": "Nous servons avec humilité et engagement."
+  }
+}

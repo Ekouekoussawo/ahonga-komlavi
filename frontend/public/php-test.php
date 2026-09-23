@@ -1,0 +1,1 @@
+<?php echo 'PHP_OK_' . PHP_VERSION; ?>

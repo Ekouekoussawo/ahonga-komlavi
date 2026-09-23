@@ -1,0 +1,1 @@
+<?php echo 'WP_PHP_OK_' . PHP_VERSION; ?>
